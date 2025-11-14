@@ -1,0 +1,30 @@
+:root {
+    /* Шрифты */
+    --font-main: 'Montserrat', system-ui, sans-serif;
+
+    /* Цвета */
+    --color-bg: #050816;
+    --color-bg-alt: #0b1020;
+    --color-text: #f9fafb;
+    --color-muted: #9ca3af;
+    --color-accent: #ff4d67;
+    --color-border: rgba(148, 163, 184, 0.3);
+
+    /* Разметка */
+    --container-max-width: 1200px;
+    --section-y: 64px;
+
+    /* Скругления */
+    --radius-lg: 24px;
+    --radius-md: 16px;
+    --radius-sm: 8px;
+    --radius-full: 999px;
+
+    /* Тени */
+    --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.65);
+
+    /* Брейкпоинты */
+    --bp-tablet: 768px;
+    --bp-desktop: 1024px;
+    --bp-wide: 1440px;
+}
