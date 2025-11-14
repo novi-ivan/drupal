@@ -75,7 +75,7 @@
     flex-direction: column;
     gap: 12px;
     font-size: 14px;
-    color: var(--color-muted);
+    color: #9ca3af;
 }
 
 .footer__right {
@@ -121,7 +121,7 @@
 .mobile-menu__panel {
     position: absolute;
     inset: 0 0 auto 0;
-    background: var(--color-bg-alt);
+    background: #0b1020;
     border-radius: 0 0 24px 24px;
     transform: translateY(-100%);
     transition: transform 0.25s ease;
