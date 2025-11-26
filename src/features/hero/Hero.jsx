@@ -1,5 +1,6 @@
 import React from 'react'
 import heroVideo from '/src/assets/video/video.mp4'
+import druplicon from '/src/assets/img/druplicon.svg'
 import { HeroStats } from './HeroStats'
 export function Hero() {
     return (
@@ -14,6 +15,7 @@ export function Hero() {
                     loop
                     playsInline
                 />
+                <img src={druplicon} className="hero__image" />
                 <div className="hero__overlay" />
             </div>
 

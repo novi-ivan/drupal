@@ -23,7 +23,12 @@
     object-fit: cover;
     filter: brightness(0.55);  /* затемнение видео */
 }
-
+.hero__image {
+    position: absolute;
+    z-index: 0.5;         /* ПОВЕРХ видео, НИЖЕ текста */
+    left: 0;
+    pointer-events: none;
+}
 .hero__overlay {
     position: absolute;
     inset: 0;
