@@ -1,0 +1,179 @@
+/* HERO */
+
+.hero {
+    position: relative;
+    min-height: 55vh;          /* общая высота блока, можно 50–65vh */
+    padding-top: 60px;         /* отступ сверху */
+    padding-bottom: 40px;      /* отступ снизу */
+    background: #090e1a;
+    overflow: hidden;
+}
+
+/* фон с видео */
+.hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;          /* обрезаем видео по границам hero */
+}
+
+.hero__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.55);  /* затемнение видео */
+}
+
+.hero__overlay {
+    position: absolute;
+    inset: 0;
+    background:
+            linear-gradient(rgba(5, 8, 22, 0.6), rgba(5, 8, 22, 0.6)), /* затемняющий слой */
+            radial-gradient(circle at top left, rgba(59, 130, 246, 0.5), transparent 55%),
+            radial-gradient(circle at bottom right, rgba(244, 63, 94, 0.4), transparent 55%);
+    mix-blend-mode: normal;
+    opacity: 0.95;
+}
+
+/* контент поверх видео */
+.hero__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;                 /* расстояние между текстом и статами */
+}
+
+.hero__text {
+    max-width: 560px;
+}
+
+.hero__eyebrow {
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    margin-bottom: 18px;
+}
+
+.hero__title {
+    font-size: 52px;
+    line-height: 1.18;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero__subtitle {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--color-muted);
+    margin-bottom: 36px;
+    max-width: 480px;
+}
+
+.hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+/* Десктоп */
+@media (min-width: 1024px) {
+    .hero {
+        /* min-height специально не трогаем, чтобы блок не растягивался до 100vh */
+    }
+
+    .hero__content {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 48px;             /* расстояние между колонками */
+    }
+}
+
+/* КНОПКИ — ОБЩИЙ СТИЛЬ */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: 8px;                 /* небольшое скругление по умолчанию */
+    border: 2px solid var(--color-accent);
+    background: var(--color-accent);
+    font-weight: 400;
+    font-size: 14px;
+    color: #fff;
+    transition: background 0.2s ease, opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* прозрачная кнопка с обводкой */
+.btn--outline {
+    background: transparent;
+    color: var(--color-text);
+}
+
+/* hero-кнопка "Тарифы" */
+.hero__btn-outline {
+    padding: 20px 90px;
+    font-size: 17px;
+    font-weight: 400;
+    border-radius: 8px;
+    border-width: 2.5px;
+    letter-spacing: 0.02em;
+}
+
+.hero__btn-outline:hover {
+    background: #ff6a3a;
+    border-color: #ff6a3a;
+}
+
+/* HERO STATS */
+
+.hero-stats {
+    display: grid;
+    gap: 24px;                 /* базовый отступ между карточками */
+    margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+    .hero-stats {
+        grid-template-columns: repeat(3, 1fr); /* 3 столбца */
+        grid-auto-rows: auto;
+        gap: 32px 40px;        /* вертикальный / горизонтальный отступы */
+        max-width: 700px;
+    }
+}
+
+.hero-stats__item {
+    position: relative;
+    padding-left: 20px;
+}
+
+/* Оранжевая вертикальная линия */
+.hero-stats__item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 4px;
+    bottom: 4px;
+    width: 3px;
+    background: var(--color-accent);
+    border-radius: 4px;
+}
+
+.hero-stats__num {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.hero-stats__text {
+    font-size: 14px;
+    color: var(--color-muted);
+    line-height: 1.45;
+}

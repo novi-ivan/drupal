@@ -1,6 +1,7 @@
 import React from 'react'
 import { Header } from '../components/layout/Header'
 import { Footer } from '../components/layout/Footer'
+import { Hero } from '../features/hero/Hero'
 
 export function Home({ onBurgerClick, onContactClick }) {
     return (
@@ -11,14 +12,8 @@ export function Home({ onBurgerClick, onContactClick }) {
             />
 
             <main>
-                <section className="section">
-                    <div className="container">
-                        <h1>Главная страница</h1>
-                        <p className="text-muted">
-                            Здесь будет Hero с видео и остальные секции.
-                        </p>
-                    </div>
-                </section>
+                <Hero />
+
             </main>
 
             <Footer />
