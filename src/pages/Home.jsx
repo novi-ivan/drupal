@@ -3,7 +3,7 @@ import { Header } from '../components/layout/Header'
 import { Footer } from '../components/layout/Footer'
 import { Hero } from '../features/hero/Hero'
 import { SupportSection } from '../features/support/SupportSection'
-
+import { SupportExperienceSection } from '../features/services/SupportExperienceSection'
 export function Home({ onBurgerClick, onContactClick }) {
     return (
         <>
@@ -22,10 +22,8 @@ export function Home({ onBurgerClick, onContactClick }) {
                         <SupportSection />
                     </div>
                 </section>
-
-                {/* дальше будут Тарифы, Наши работы и т.д. */}
+                <SupportExperienceSection />
             </main>
-
             <Footer />
         </>
     )
