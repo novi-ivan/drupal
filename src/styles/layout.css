@@ -111,6 +111,10 @@
         gap: 16px;
     }
 }
+.section--white {
+    background: #ffffff;      /* белый фон */
+    color: #0f172a;           /* тёмный текст, чтобы читалось */
+}
 /* FOOTER */
 
 .footer {

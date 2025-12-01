@@ -29,6 +29,29 @@
     font-style: normal;
     font-display: swap;
 }
+.container {
+    width: 100%;
+    max-width: 1280px;      /* ширина контента, как в фигме */
+    margin: 0 auto;
+    padding-left: 40px;     /* отступ слева */
+    padding-right: 40px;    /* отступ справа */
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding-left: 20px;  /* мобильные отступы */
+        padding-right: 20px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1320px;   /* чуть шире на больших экранах */
+        padding-left: 60px;  /* отступы как в макетах */
+        padding-right: 60px;
+    }
+}
 body {
     font-family: 'Montserrat', sans-serif;
     background: var(--color-bg);

@@ -2,6 +2,7 @@ import React from 'react'
 import heroVideo from '/src/assets/video/video.mp4'
 import druplicon from '/src/assets/img/druplicon.svg'
 import { HeroStats } from './HeroStats'
+import { SupportSection } from "../features/support/SupportSection";
 export function Hero() {
     return (
 
@@ -36,7 +37,6 @@ export function Hero() {
                     </div>
                 </div>
                 <HeroStats />
-                {/* Здесь потом можно будет добавить блок с цифрами / логотипами клиентов */}
             </div>
         </section>
     )

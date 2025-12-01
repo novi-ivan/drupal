@@ -85,7 +85,6 @@
 /* Десктоп */
 @media (min-width: 1024px) {
     .hero {
-        /* min-height специально не трогаем, чтобы блок не растягивался до 100vh */
     }
 
     .hero__content {
@@ -141,7 +140,7 @@
 
 .hero-stats {
     display: grid;
-    gap: 24px;                 /* базовый отступ между карточками */
+    gap: 24px;/* отступ между карточками */
     margin-top: 20px;
 }
 
@@ -181,4 +180,76 @@
     font-size: 14px;
     color: var(--color-muted);
     line-height: 1.45;
+}
+/* SUPPORT SECTION*/
+
+.support {
+    text-align: left;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.support__title {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.support__subtitle {
+    font-size: 16px;
+    color: #000000;
+    max-width: 520px;
+    margin-bottom: 48px;
+}
+
+/* GRID: 4 × 2 */
+.support__grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+    .support__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .support__grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 48px 32px;
+    }
+}
+
+.support__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 240px;
+}
+.support__icon {
+    position: relative;
+    z-index: 1;
+    width: 60px;
+    height: 60px;
+}
+.support__icon-bg {
+    position: absolute;
+    top: 10px;
+    left: -30px;
+    width: 60px;
+    height: 60px;
+    z-index: 0;
+}
+
+
+.support__text {
+    font-size: 15px;
+    line-height: 1.55;
+    color:#000000
 }
