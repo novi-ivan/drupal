@@ -422,3 +422,173 @@
     line-height: 1.6;
     color: #e5e7eb;
 }
+/* TARIFFS */
+
+.tariffs {
+    padding-top: 100px;
+    padding-bottom: 80px;
+    background: #f9fafb;
+}
+
+.tariffs__title {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color:#050816;
+}
+
+/* карточки */
+
+.tariffs__cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    justify-items: center;
+    margin-bottom: 80px;
+}
+
+@media (max-width: 960px) {
+    .tariffs__cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+.tariff-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 4px;
+    padding: 28px 32px 32px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    max-width: 340px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin: 0 0;
+    z-index: 1;
+}
+
+/* центральная карточка*/
+.tariff-card--primary {
+transform: scale(1.07);
+    transform-origin: center;
+    z-index: 3;
+    box-shadow: 0 22px 55px rgba(15, 23, 42, 0.22);
+}
+
+@media (max-width: 960px) {
+    .tariff-card {
+        margin: 0;
+    }
+
+    .tariff-card--primary {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+}
+
+.tariff-card__header {
+    margin-bottom: 6px;
+}
+
+.tariff-card__name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #f97316;
+}
+
+.tariff-card__price {
+    font-size: 10px;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 2px;
+}
+
+.tariff-card__price-value {
+    font-size: 40px;
+}
+
+.tariff-card__price-currency {
+    font-size: 26px;
+}
+
+.tariff-card__note {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #6b7280;
+}
+
+/* список особенностей */
+
+.tariff-card__list {
+    list-style: none;
+    padding: 16px 0 10px;
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tariff-card__item {
+    display: flex;
+    gap: 8px;
+    font-size: 14px;
+    color: #4b5563;
+}
+
+
+.tariff-card__bullet {
+    width: 13px;
+    height: 10px;
+    flex-shrink: 0;
+    background: url('/src/assets/img/check.svg') center/contain no-repeat;
+    margin-top: 4px;
+    border: none;
+}
+
+/* кнопки в карточках */
+
+.tariff-card__btn {
+    margin-top: 18px;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* левая и правая — outline: оранжевый текст и обводка, фон прозрачный */
+.tariff-card__btn.btn--outline {
+    background: transparent;
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+/* центральная — залитая оранжевая */
+.tariff-card__btn--filled {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #ffffff;
+}
+
+/* футер под тарифами */
+
+.tariffs__footer {
+    text-align: center;
+}
+
+.tariffs__footer-text {
+    font-size: 14px;
+    color: #4b5563;
+    margin-bottom: 8px;
+}
+
+.tariffs__footer-link {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 14px;
+    color: var(--color-accent);
+    text-decoration: underline;
+    cursor: pointer;
+}

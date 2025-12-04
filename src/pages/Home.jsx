@@ -4,6 +4,7 @@ import { Footer } from '../components/layout/Footer'
 import { Hero } from '../features/hero/Hero'
 import { SupportSection } from '../features/support/SupportSection'
 import { SupportExperienceSection } from '../features/services/SupportExperienceSection'
+import { TariffsSection } from '../features/tariffs/TariffsSection'
 export function Home({ onBurgerClick, onContactClick }) {
     return (
         <>
@@ -23,6 +24,7 @@ export function Home({ onBurgerClick, onContactClick }) {
                     </div>
                 </section>
                 <SupportExperienceSection />
+                <TariffsSection />
             </main>
             <Footer />
         </>
