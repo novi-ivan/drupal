@@ -9,7 +9,7 @@ function App() {
     const handleMenuClose = () => setIsMenuOpen(false)
 
     const handleContactClick = () => {
-        console.log('Наата кнопка "Связаться"')
+        console.log('Нажата кнопка "Связаться"')
     }
 
     return (

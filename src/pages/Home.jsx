@@ -1,10 +1,14 @@
 import React from 'react'
 import { Header } from '../components/layout/Header'
-import { Footer } from '../components/layout/Footer'
 import { Hero } from '../features/hero/Hero'
 import { SupportSection } from '../features/support/SupportSection'
 import { SupportExperienceSection } from '../features/services/SupportExperienceSection'
 import { TariffsSection } from '../features/tariffs/TariffsSection'
+import { CasesSection } from '../features/cases/CasesSection'
+import { TeamSection } from '../features/team/TeamSection'
+import { ReviewsSection } from '../features/reviews/ReviewsSection'
+import { PartnersSection } from '../features/partners/PartnersSection'
+import { ContactSection } from '../features/contact/ContactSection'
 export function Home({ onBurgerClick, onContactClick }) {
     return (
         <>
@@ -25,8 +29,12 @@ export function Home({ onBurgerClick, onContactClick }) {
                 </section>
                 <SupportExperienceSection />
                 <TariffsSection />
+                <CasesSection />
+                <TeamSection />
+                <ReviewsSection />
+                <PartnersSection />
+                <ContactSection />
             </main>
-            <Footer />
         </>
     )
 }

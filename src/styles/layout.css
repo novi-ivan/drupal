@@ -115,51 +115,6 @@
     background: #ffffff;      /* белый фон */
     color: #0f172a;           /* тёмный текст, чтобы читалось */
 }
-/* FOOTER */
-
-.footer {
-    padding: 24px 0;
-    border-top: 1px solid rgba(148, 163, 184, 0.4);
-    margin-top: 40px;
-}
-
-.footer__inner {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    font-size: 14px;
-    color: #9ca3af;
-}
-
-.footer__right {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.footer__link:hover {
-    color: #fff;
-}
-.footer__link {
-    color: var(--color-text);
-    transition: opacity 0.2s ease;
-}
-
-.footer__link:hover {
-    opacity: 0.6;
-}
-@media (min-width: 768px) {
-    .footer__inner {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .footer__right {
-        flex-direction: row;
-        gap: 16px;
-    }
-}
 
 /* MOBILE MENU */
 
