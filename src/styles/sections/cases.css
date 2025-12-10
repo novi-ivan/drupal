@@ -13,7 +13,7 @@
     font-size: 42px;
     font-weight: 700;
     line-height: 1.1;
-    margin-bottom: 32px;
+    margin-bottom: 60px;
 }
 
 /* Сетка карточек кейсов */
@@ -122,7 +122,7 @@
     color: var(--color-surface);
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 5px;
 }
 
 /* Внутренние отступы для wide карточки */
@@ -146,6 +146,7 @@
     font-weight: 700;
     line-height: 1.2;
     color: inherit;
+    margin: 0 0 5px;
 }
 
 /* Дата кейса */
@@ -154,6 +155,7 @@
     font-weight: 700;
     color: inherit;
     opacity: 0.8;
+    margin: 0;
 }
 
 /* Вариант карточки с описанием */
@@ -180,18 +182,20 @@
     color: var(--color-text-dark);
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 0;
 }
 
 /* Тёмный цвет заголовка для светлой карточки */
 .case-card__title--dark {
     color: var(--color-text-dark);
+    margin: 0 0 5px;
 }
 
 /* Тёмный цвет даты */
 .case-card__date--dark {
     color: var(--color-text-dark);
     opacity: 0.5;
+    margin: 0 0 20px;
 }
 
 /* Текст описания */
@@ -209,7 +213,7 @@
 
 /* Нижний блок под сеткой кейсов */
 .cases__footer {
-    margin-top: 40px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
 }
@@ -221,10 +225,14 @@
     border-radius: var(--radius-xs);
     border: 1px solid rgba(5, 12, 51, 0.2);
     background: var(--color-surface);
-    color: var(--color-text-dark);
+    color: var(--main-black, #050C33);
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
     font-size: 12px;
+    font-style: normal;
     font-weight: 500;
-    letter-spacing: 0.06em;
+    line-height: 12px; /* 100% */
+    letter-spacing: 0.72px;
     text-transform: uppercase;
     cursor: pointer;
     transition: box-shadow 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
