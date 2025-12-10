@@ -18,7 +18,7 @@ export const teamMembers = [
     {
         id: 3,
         name: 'Ирина',
-        role: 'менеджер по работе с клиентами, организация оказания услуг',
+        role: 'менеджер по работе\n с клиентами, организация\n оказания услуг',
         image: teamMember2,
     },
     {
@@ -30,7 +30,7 @@ export const teamMembers = [
     {
         id: 5,
         name: 'Сергей',
-        role: 'технический директор, 14 лет опыт работы с Drupal',
+        role: 'технический директор, 14 лет\n опыт работы с Drupal',
         image: teamMember1,
     },
     {

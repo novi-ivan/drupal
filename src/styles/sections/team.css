@@ -10,17 +10,20 @@
 /* Заголовок секции команды */
 .team__title {
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
     font-size: 42px;
+    font-style: normal;
     font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 52px;
+    line-height: normal;
+    color: var(--main-black, #050C33);
+    margin-bottom: 80px;
 }
 
 /* Сетка карточек команды */
 .team__grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 48px 32px;
+    gap: 60px 120px; /* row-gap col-gap */
 }
 
 @media (max-width: 1023px) {
@@ -50,7 +53,9 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 14px;
+    gap: 0;
+    margin: 0;
+    padding: 0;
 }
 
 /* Контейнер аватарки */
@@ -59,6 +64,7 @@
     max-width: 280px;
     aspect-ratio: 1 / 1;
     overflow: hidden;
+    margin: 0;
 }
 
 /* Изображение участника */
@@ -73,7 +79,8 @@
 .team-member__content {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 3px;
+    margin-top: 30px; /* отступ от изображения до блока с именем/ролью */
 }
 
 /* Имя участника */
@@ -81,6 +88,7 @@
     font-size: 16px;
     font-weight: 700;
     line-height: 22px;
+    margin: 0;
 }
 
 /* Роль/должность участника */
@@ -89,4 +97,6 @@
     font-weight: 500;
     line-height: 22px;
     color: rgba(5, 12, 51, 0.7);
+    white-space: pre-line; /* учитывать переносы из контента */
+    margin: 0;
 }

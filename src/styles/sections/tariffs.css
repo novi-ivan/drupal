@@ -59,11 +59,6 @@ transform: scale(1.07);
     box-shadow: var(--shadow-card-strong);
 }
 
-/* Индивидуальные классы карточек для настройки */
-.tariff-card--1 {}
-.tariff-card--2 {}
-.tariff-card--3 {}
-
 @media (max-width: 960px) {
     .tariff-card {
         margin: 0;
