@@ -1,0 +1,291 @@
+/* SUPPORT SECTION */
+
+/* Секция "13 лет совершенствуем..." */
+.support {
+    text-align: left;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* Заголовок секции поддержки */
+.support__title {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+/* Подзаголовок секции поддержки */
+.support__subtitle {
+    font-size: 16px;
+    color: #000000;
+    max-width: 520px;
+    margin-bottom: 48px;
+}
+
+/* GRID: 4 × 2 */
+/* Сетка карточек компетенций */
+.support__grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+    .support__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .support__grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 48px 32px;
+    }
+}
+
+/* Карточка компетенции */
+.support__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 240px;
+}
+
+/* Иконка компетенции */
+.support__icon {
+    position: relative;
+    z-index: 1;
+    width: 60px;
+    height: 60px;
+}
+
+/* Фоновая подложка иконки */
+.support__icon-bg {
+    position: absolute;
+    top: 10px;
+    left: -30px;
+    width: 60px;
+    height: 60px;
+    z-index: 0;
+}
+
+/* Текст компетенции */
+.support__text {
+    font-size: 15px;
+    line-height: 1.55;
+    color:#000000
+}
+
+/* SUPPORT + EXPERTISE (двойной фон) */
+
+/* Секция "Поддержка от Drupal-coder" + экспертиза */
+.support-exp {
+    position: relative;
+    background: linear-gradient(
+            to bottom,
+            var(--color-surface) 0%,
+            var(--color-surface) 40%,   /* белый под карточками */
+            #050816 40%,   /* дальше тёмный */
+            #050816 100%
+    );
+    color: #0f172a;
+}
+
+/* верхняя часть */
+
+/* Обёртка верхнего блока с карточками */
+.support-exp__top {
+    margin-bottom: 64px;
+}
+
+/* Заголовок верхнего блока */
+.support-exp__title {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* грид карточек */
+
+/* Сетка карточек преимуществ */
+.support-exp__grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+@media (max-width: 1024px) {
+    .support-exp__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .support-exp__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Карточка преимущества */
+.support-exp__card {
+    position: relative;
+    background: var(--color-surface);
+    border-radius: var(--radius-xxs);
+    padding: 26px 24px 30px;
+    box-shadow: 0 4px 22px rgba(15, 23, 42, 0.06);
+    overflow: hidden;
+}
+
+/* Декоративный фон карточки */
+.support-exp__card-bg {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 80px;
+    pointer-events: none;
+}
+
+/* Порядковый номер карточки */
+.support-exp__num {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-muted);
+    margin-bottom: 10px;
+}
+
+/* Заголовок карточки */
+.support-exp__card-title {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #111827;
+}
+
+/* Описание карточки */
+.support-exp__card-text {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--color-text-secondary);
+}
+
+/* нижняя часть: экспертиза */
+
+/* Блок с иллюстрацией и списком экспертизы */
+.support-exp__bottom {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    color: var(--color-surface);
+}
+
+@media (min-width: 1024px) {
+    .support-exp__bottom {
+        flex-direction: row;
+        align-items: center;
+        gap: 64px;
+    }
+}
+
+/* Контейнер для изображения аналитики */
+.support-exp__image-wrap {
+    flex: 0 0 auto;
+    max-width: 620px;
+    position: relative;
+    z-index: 2;
+    margin-left: -120px;
+}
+
+/* Картинка ноутбука */
+.support-exp__image {
+    width: 100%;
+    height: auto;
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: translateY(16%);
+    filter: drop-shadow(0 22px 55px rgba(15, 23, 42, 0.25));
+}
+
+@media (max-width: 1024px) {
+    .support-exp__image-wrap {
+        margin-left: 0;
+        max-width: 100%;
+    }
+
+    .support-exp__image {
+        width: 100%;
+        top: 0;
+        transform: translateY(0);
+    }
+}
+
+/* Колонка с текстом экспертизы */
+.support-exp__info {
+    flex: 1 1 auto;
+}
+
+/* Заголовок блока экспертизы */
+.support-exp__info-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+/* Сетка пунктов экспертизы */
+.support-exp__info-grid {
+    display: grid;
+    gap: 20px 40px;
+}
+
+@media (min-width: 768px) {
+    .support-exp__info-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Один пункт экспертизы */
+.support-exp__info-item {
+    display: flex;
+    align-items: stretch;
+    gap: 14px;
+}
+
+/* Цветная полоса слева от текста пункта */
+.support-exp__info-line {
+    width: 3px;
+    border-radius: var(--radius-full);
+    background: var(--color-accent);
+    flex-shrink: 0;
+}
+
+/* Большая фоновая иконка Druplicon */
+.support-exp__bg-icon {
+    position: absolute;
+    right: -5px;
+    bottom: 40px;
+    width: 700px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Контейнер секции (ограничивает фон) */
+.support-exp {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Текст пункта экспертизы */
+.support-exp__info-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--color-border-light);
+}

@@ -1,0 +1,92 @@
+/* TEAM */
+
+/* Секция команды */
+.team {
+    background: var(--color-surface);
+    color: var(--color-text-dark);
+    padding: 80px 0 72px;
+}
+
+/* Заголовок секции команды */
+.team__title {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 52px;
+}
+
+/* Сетка карточек команды */
+.team__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 48px 32px;
+}
+
+@media (max-width: 1023px) {
+    .team__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .team {
+        padding: 64px 0 64px;
+    }
+
+    .team__title {
+        font-size: 34px;
+        margin-bottom: 36px;
+    }
+
+    .team__grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
+
+/* Карточка участника команды */
+.team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+/* Контейнер аватарки */
+.team-member__image-wrapper {
+    width: 100%;
+    max-width: 280px;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+/* Изображение участника */
+.team-member__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Колонка с текстом */
+.team-member__content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Имя участника */
+.team-member__name {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+}
+
+/* Роль/должность участника */
+.team-member__role {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    color: rgba(5, 12, 51, 0.7);
+}

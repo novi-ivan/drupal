@@ -1,13 +1,7 @@
 import React from 'react'
 import logo from '../../assets/img/drupal-coder.svg'
-
-const navItems = [
-    { id: 'support',  href: '#support',  label: 'Поддержка сайтов' },
-    { id: 'tariffs',  href: '#tariffs',  label: 'Тарифы' },
-    { id: 'works',    href: '#works',    label: 'Наши работы' },
-    { id: 'reviews',  href: '#reviews',  label: 'Отзывы' },
-    { id: 'contacts', href: '#contacts', label: 'Контакты' },
-]
+import { contactPhone, contactPhoneHref } from '../../content/contact'
+import { languageLabel, mainNavItems } from '../../content/navigation'
 
 export function Header({
                            activeSection = 'support',
@@ -35,7 +29,7 @@ export function Header({
 
                 {/* МЕНЮ ПО ЦЕНТРУ (ДЕСКТОП) */}
                 <nav className="header__nav header__nav--desktop">
-                    {navItems.map((item) => (
+                    {mainNavItems.map((item) => (
                         <a
                             key={item.id}
                             href={item.href}
@@ -52,8 +46,8 @@ export function Header({
 
                 {/* ПРАВО: ТЕЛЕФОН + RU + БУРГЕР */}
                 <div className="header__right">
-                    <a href="tel:88002222673" className="header__phone">
-                        8 800 222-26-73
+                    <a href={contactPhoneHref} className="header__phone">
+                        {contactPhone}
                     </a>
 
                     <button
@@ -61,8 +55,23 @@ export function Header({
                         className="header__lang"
                         onClick={onLangClick}
                     >
-                        <span>RU</span>
-                        <span className="header__lang-arrow">▾</span>
+                        <span className="header__lang-text">{languageLabel}</span>
+                        <svg
+                            className="header__lang-icon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="9"
+                            height="6"
+                            viewBox="0 0 9 6"
+                            fill="none"
+                            aria-hidden="true"
+                        >
+                            <path
+                                d="M0.707031 0.707092L4.20703 4.20709L7.70703 0.707092"
+                                stroke="white"
+                                strokeWidth="2"
+                                opacity="0.24"
+                            />
+                        </svg>
                     </button>
 
                     <button

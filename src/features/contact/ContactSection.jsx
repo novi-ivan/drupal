@@ -4,6 +4,13 @@ import contactBgBottom from '../../assets/img/contact-bg-bottom.png'
 import contactIconPhone from '../../assets/img/contact-icon-phone.svg'
 import contactIconMail from '../../assets/img/contact-icon-mail.svg'
 import contactIconCheck from '../../assets/img/contact-icon-check.svg'
+import {
+    contactEmail,
+    contactEmailHref,
+    contactPhone,
+    contactPhoneHref,
+    consentText,
+} from '../../content/contact'
 
 export function ContactSection() {
     const handleSubmit = (event) => {
@@ -29,14 +36,14 @@ export function ContactSection() {
                     </p>
 
                     <div className="contact__links">
-                        <a className="contact__link contact__link--phone" href="tel:88002222673">
+                        <a className="contact__link contact__link--phone" href={contactPhoneHref}>
                             <img src={contactIconPhone} alt="" className="contact__icon" />
-                            <span>8 800 222-26-73</span>
+                            <span>{contactPhone}</span>
                         </a>
 
-                        <a className="contact__link" href="mailto:info@drupal-coder.ru">
+                        <a className="contact__link" href={contactEmailHref}>
                             <img src={contactIconMail} alt="" className="contact__icon" />
-                            <span className="contact__mail">info@drupal-coder.ru</span>
+                            <span className="contact__mail">{contactEmail}</span>
                         </a>
                     </div>
                 </div>
@@ -65,7 +72,7 @@ export function ContactSection() {
                             <img src={contactIconCheck} alt="" />
                         </span>
                         <span className="contact__checkbox-label">
-                            Отправляя заявку, я даю согласие на обработку своих персональных данных
+                            {consentText}
                         </span>
                     </label>
 

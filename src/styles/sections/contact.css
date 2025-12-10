@@ -1,0 +1,276 @@
+/* CONTACT */
+
+/* Секция контактов */
+.contact {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(140% 120% at 24% 8%, rgba(255, 255, 255, 0.08), transparent 62%),
+        linear-gradient(125deg, #040613 0%, #05081a 55%, #050b21 100%);
+    color: var(--color-surface);
+    padding: 96px 0 104px;
+}
+
+/* Общий контейнер фоновых картинок */
+.contact__bg {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Картинка фона */
+.contact__bg img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Верхняя фоновая картинка */
+.contact__bg--top {
+    right: -80px;
+    top: -60px;
+    width: 420px;
+    transform: rotate(-13deg);
+    opacity: 0.9;
+}
+
+/* Нижняя фоновая картинка */
+.contact__bg--bottom {
+    right: -220px;
+    bottom: -220px;
+    width: 640px;
+    transform: rotate(-13deg);
+    opacity: 0.9;
+}
+
+/* Внутренняя сетка контактов */
+.contact__inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 72px;
+    align-items: flex-start;
+}
+
+/* Левая колонка с текстом */
+.contact__info {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    max-width: 520px;
+}
+
+/* Заголовок секции контактов */
+.contact__title {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Описание в секции контактов */
+.contact__text {
+    font-size: 16px;
+    line-height: 22px;
+    opacity: 0.7;
+}
+
+/* Список ссылок (телефон/почта) */
+.contact__links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 12px;
+}
+
+/* Ссылка с иконкой */
+.contact__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    color: var(--color-surface);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* Телефонная ссылка (увеличенный шрифт) */
+.contact__link--phone {
+    font-size: 24px;
+}
+
+/* Адрес email */
+.contact__mail {
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+/* Иконка у ссылки */
+.contact__icon {
+    width: 24px;
+    height: 24px;
+    opacity: 0.5;
+}
+
+/* Форма заявки */
+.contact__form {
+    display: grid;
+    gap: 14px;
+    position: relative;
+    z-index: 1;
+    max-width: 480px;
+    width: 100%;
+}
+
+/* Обёртка поля формы */
+.contact__field {
+    display: block;
+}
+
+/* Поля формы */
+.contact__field input,
+.contact__field textarea {
+    width: 100%;
+    padding: 18px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-xs);
+    color: var(--color-surface);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+/* Многострочное поле */
+.contact__field textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Плейсхолдеры полей */
+.contact__field input::placeholder,
+.contact__field textarea::placeholder {
+    color: var(--color-surface);
+    opacity: 0.9;
+}
+
+/* Чекбокс согласия */
+.contact__checkbox {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 10px;
+    margin: 6px 0 4px;
+    font-size: 12px;
+    color: var(--color-surface);
+}
+
+/* Скрытый реальный чекбокс */
+.contact__checkbox input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Визуальная коробка чекбокса */
+.contact__checkbox-box {
+    width: 25px;
+    height: 25px;
+    border-radius: var(--radius-xs);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    display: grid;
+    place-items: center;
+}
+
+/* Галочка внутри чекбокса */
+.contact__checkbox-box img {
+    width: 14px;
+    height: 10px;
+}
+
+/* Текст согласия */
+.contact__checkbox-label {
+    opacity: 0.85;
+    line-height: 1.4;
+}
+
+/* Кнопка отправки формы */
+.contact__submit {
+    width: 100%;
+    height: 60px;
+    background: #f14d34;
+    border: none;
+    border-radius: var(--radius-xs);
+    color: var(--color-surface);
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Ховер кнопки отправки */
+.contact__submit:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* Подвал с примечаниями */
+.contact__footnote {
+    position: relative;
+    z-index: 1;
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Вспомогательный класс для скрытого текста */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@media (max-width: 1024px) {
+    .contact__inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact__info {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .contact {
+        padding: 64px 0 72px;
+    }
+
+    .contact__title {
+        font-size: 32px;
+    }
+
+    .contact__bg--top {
+        width: 260px;
+        right: -120px;
+    }
+
+    .contact__bg--bottom {
+        width: 380px;
+        left: 20%;
+        bottom: -120px;
+    }
+}

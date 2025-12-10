@@ -1,0 +1,218 @@
+/* hero: корневой контейнер секции */
+.hero {
+    position: relative;
+    min-height: 55vh;          /* общая высота блока, можно 50–65vh */
+    padding-top: 190px;        /* отступ сверху секции */
+    background: #090e1a;
+    overflow: hidden;
+}
+
+/* hero__bg: контейнер для видео/оверлея */
+.hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;          /* обрезаем видео по границам hero */
+}
+
+/* hero__video: видеофон */
+.hero__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.55);  /* затемнение видео */
+    position: relative;
+    z-index: 0;
+}
+
+/* hero__image: декоративный слой над видео */
+.hero__image {
+    position: absolute;
+    z-index: 2;         /* ПОВЕРХ блюра */
+    left: 0;
+    pointer-events: none;
+    opacity: 0.55;
+}
+
+/* hero__overlay: градиентный оверлей поверх видео */
+.hero__overlay {
+    position: absolute;
+    inset: 0;
+    background:
+            linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* общий затемняющий слой */
+            linear-gradient(rgba(5, 8, 22, 0.6), rgba(5, 8, 22, 0.6)),
+            radial-gradient(circle at top left, rgba(59, 130, 246, 0.5), transparent 55%),
+            radial-gradient(circle at bottom right, rgba(244, 63, 94, 0.4), transparent 55%);
+    mix-blend-mode: normal;
+    opacity: 0.95;
+    z-index: 1;
+}
+
+/* hero__content: область с текстом и блоком статистики */
+.hero__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 97px;                 /* расстояние между текстом и статами */     /* отступ слева для блока текста */
+}
+
+/* hero__eyebrow: лейбл над заголовком */
+.hero__eyebrow {
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    margin-bottom: 18px;
+}
+
+/* hero__title: главный заголовок */
+.hero__title {
+    width: 506px;
+    font-size: 52px;
+    line-height: 60px;
+    font-weight: 700;
+    font-style: normal;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    margin-bottom: 15px;       /* дистанция до подзаголовка */
+}
+
+/* hero__subtitle: подзаголовок */
+.hero__subtitle {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 500;
+    font-style: normal;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    margin-bottom: 55px;       /* дистанция до блока кнопок */
+    max-width: 480px;
+}
+
+/* hero__actions: контейнер для кнопок */
+.hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;  /* расстояние между кнопками */
+}
+
+/* hero__btn-outline: кнопка "Тарифы" */
+.hero__btn-outline {
+    padding: 20px 90px;
+    font-size: 17px;
+    font-weight: 400;
+    border-radius: var(--radius-sm);
+    border-width: 2.5px;
+    letter-spacing: 0.02em;
+    margin-bottom: 154px;
+}
+
+/* hero__btn-outline:hover: подсветка кнопки при наведении */
+.hero__btn-outline:hover {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+/* HERO STATS */
+
+/* hero-stats: сетка карточек статистики */
+.hero-stats {
+    font-family: 'Montserrat', sans-serif;
+    --hero-line-height: 80px;
+    --hero-line-top: 46px;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+    column-gap: 48px;
+    margin-top: 23px;
+}
+
+@media (min-width: 768px) {
+    /* hero-stats@768: больше зазоры и ширина карточек */
+    .hero-stats {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        row-gap: 64px;
+        column-gap: 72px;
+    }
+}
+
+/* hero-stats__item: отдельная карточка статистики */
+.hero-stats__item {
+    position: relative;
+    min-height: 80px;
+    padding-left: 10px; /* отступ под вертикальную линию */
+    padding-top: 45px;
+}
+
+/* hero-stats__line: вертикальный акцент слева */
+.hero-stats__line {
+    position: absolute;
+    left: 0;
+    top: var(--hero-line-top);
+    height: var(--hero-line-height);
+    width: 3px;
+    background-color: var(--color-accent);
+    border-radius: var(--radius-xxs);
+}
+
+/* hero-stats__content: стек числа и подписи */
+.hero-stats__content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* hero-stats__cup: декоративный кубок в первой карточке */
+.hero-stats__cup {
+    position: absolute;
+    left: 56px;
+    top: 12px;
+    width: 60px;
+    height: auto;
+}
+
+/* hero-stats__item--with-cup: отступ под кубок */
+.hero-stats__item--with-cup {
+    padding-top: 22px; /* чтобы число было под кубком */
+}
+
+/* hero-stats__item--with-cup .hero-stats__num: укрупнение числа под кубок */
+.hero-stats__item--with-cup .hero-stats__num {
+    font-size: 48px;
+}
+
+/* hero-stats__num: число в карточке статистики */
+.hero-stats__num {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: normal;
+    color: var(--White, #fff);
+}
+
+/* hero-stats__text: подпись в карточке статистики */
+.hero-stats__text {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 500;
+    color: var(--White, #fff);
+    opacity: 0.7;
+    white-space: pre-line; /* поддержка переносов из текста heroStats */
+}
+
+/* hero-stats__text@cup: размеры текста первой карточки из макета */
+.hero-stats__item--with-cup .hero-stats__text {
+    width: 161px;
+    line-height: 15px; /* три строки дают высоту 45px */
+}
+
+/* hero__content@1024: раскладка текста и статистики в две колонки */
+@media (min-width: 1024px) {
+    .hero__content {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+}

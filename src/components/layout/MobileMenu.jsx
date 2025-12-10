@@ -1,10 +1,5 @@
 import React from 'react'
-
-const navItems = [
-    { href: '#services', label: 'Услуги' },
-    { href: '#cases', label: 'Кейсы' },
-    { href: '#team', label: 'Команда' },
-]
+import { mobileNavItems } from '../../content/navigation'
 
 export function MobileMenu({ isOpen, onClose, onContactClick }) {
     return (
@@ -22,7 +17,7 @@ export function MobileMenu({ isOpen, onClose, onContactClick }) {
                 </button>
 
                 <nav className="mobile-menu__nav">
-                    {navItems.map((item) => (
+                    {mobileNavItems.map((item) => (
                         <a
                             key={item.href}
                             href={item.href}

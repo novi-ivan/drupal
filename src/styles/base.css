@@ -1,32 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+
 @font-face {
     font-family: 'Montserrat';
-    src: url('../assets/fonts/Montserrat-Regular.ttf') format('truetype');
-    font-weight: 400;
+    src: url('../assets/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+    font-weight: 400 700;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Montserrat';
-    src: url('../assets/fonts/Montserrat-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url('../assets/fonts/Montserrat-SemiBold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url('../assets/fonts/Montserrat-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
+    src: url('../assets/fonts/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: 400 700;
+    font-style: italic;
     font-display: swap;
 }
 .container {
@@ -58,6 +44,11 @@ body {
     color: var(--color-text);
     margin: 0;
     padding: 0;
+    width: 100%;
+    max-width: 1440px;
+    min-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 a {
     color: inherit;

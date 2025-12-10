@@ -1,41 +1,33 @@
 import React from 'react'
-
-const stats = [
-    {
-        num: '#1',
-        text: 'Drupal-разработчик в России по версии Рейтинга Рунета'
-    },
-    {
-        num: '3+',
-        text: 'средний опыт специалистов более 3 лет'
-    },
-    {
-        num: '14',
-        text: 'лет опыта в сфере Drupal'
-    },
-    {
-        num: '200+',
-        text: 'модулей и тем в формате DrupalGive'
-    },
-    {
-        num: '35 000',
-        text: 'часов поддержки сайтов на Drupal'
-    },
-    {
-        num: '200+',
-        text: 'проектов на поддержке'
-    }
-]
+import { heroStats } from '../../content/hero'
+import cupImg from '/src/assets/img/cup.png'
 
 export function HeroStats() {
     return (
         <div className="hero-stats">
-            {stats.map((item, index) => (
-                <div key={index} className="hero-stats__item">
-                    <div className="hero-stats__num">{item.num}</div>
-                    <div className="hero-stats__text">{item.text}</div>
-                </div>
-            ))}
+            {heroStats.map((item, index) => {
+                const isFirst = index === 0
+                return (
+                    <div
+                        key={index}
+                        className={`hero-stats__item${isFirst ? ' hero-stats__item--with-cup' : ''}`}
+                    >
+                        <span className="hero-stats__line" aria-hidden="true" />
+                        <div className="hero-stats__content">
+                            <div className="hero-stats__num">{item.num}</div>
+                            <div className="hero-stats__text">{item.text}</div>
+                        </div>
+                        {isFirst && (
+                            <img
+                                src={cupImg}
+                                alt=""
+                                className="hero-stats__cup"
+                                aria-hidden="true"
+                            />
+                        )}
+                    </div>
+                )
+            })}
         </div>
     )
 }

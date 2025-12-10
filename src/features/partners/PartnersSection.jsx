@@ -1,21 +1,5 @@
 import React from 'react'
-import logoRosatom from '../../assets/img/logo-rosatom.png'
-import logoGoznak from '../../assets/img/logo-goznak.png'
-import logoGazprombank from '../../assets/img/logo-gazprombank.png'
-import logoVtb from '../../assets/img/logo-vtb.png'
-
-const logos = [
-    { src: logoRosatom, alt: 'Росатом' },
-    { src: logoGoznak, alt: 'Гознак' },
-    { src: logoGazprombank, alt: 'Газпромбанк' },
-    { src: logoVtb, alt: 'ВТБ' },
-    { src: logoGoznak, alt: 'Гознак' },
-    { src: logoRosatom, alt: 'Росатом' },
-    { src: logoRosatom, alt: 'Росатом' },
-    { src: logoVtb, alt: 'ВТБ' },
-    { src: logoGoznak, alt: 'Гознак' },
-    { src: logoVtb, alt: 'ВТБ' },
-]
+import { partners } from '../../content/partners'
 
 export function PartnersSection() {
     return (
@@ -28,7 +12,7 @@ export function PartnersSection() {
                 </p>
 
                 <div className="partners__grid">
-                    {logos.map((logo, index) => (
+                    {partners.map((logo, index) => (
                         <div className="partners__card" key={`${logo.alt}-${index}`}>
                             <img className="partners__logo" src={logo.src} alt={logo.alt} />
                         </div>

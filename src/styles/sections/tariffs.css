@@ -1,0 +1,187 @@
+/* TARIFFS */
+
+/* Секция тарифов */
+.tariffs {
+    padding-top: 100px;
+    padding-bottom: 80px;
+    background: var(--color-surface-muted);
+}
+
+/* Заголовок секции тарифов */
+.tariffs__title {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color:#050816;
+}
+
+/* карточки */
+
+/* Сетка карточек тарифов */
+.tariffs__cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    justify-items: center;
+    margin-bottom: 80px;
+}
+
+@media (max-width: 960px) {
+    .tariffs__cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Базовая карточка тарифа */
+.tariff-card {
+    position: relative;
+    background: var(--color-surface);
+    border-radius: var(--radius-xxs);
+    padding: 28px 32px 32px;
+    box-shadow: var(--shadow-card);
+    max-width: 340px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin: 0 0;
+    z-index: 1;
+}
+
+/* центральная карточка*/
+/* Акцентная карточка тарифа */
+.tariff-card--primary {
+transform: scale(1.07);
+    transform-origin: center;
+    z-index: 3;
+    box-shadow: var(--shadow-card-strong);
+}
+
+@media (max-width: 960px) {
+    .tariff-card {
+        margin: 0;
+    }
+
+    .tariff-card--primary {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+}
+
+/* Шапка карточки */
+.tariff-card__header {
+    margin-bottom: 6px;
+}
+
+/* Название тарифа */
+.tariff-card__name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #f97316;
+}
+
+/* Строка цены */
+.tariff-card__price {
+    font-size: 10px;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 2px;
+}
+
+/* Число цены */
+.tariff-card__price-value {
+    font-size: 40px;
+}
+
+/* Валюта цены */
+.tariff-card__price-currency {
+    font-size: 26px;
+}
+
+/* Примечание (в час) */
+.tariff-card__note {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #6b7280;
+}
+
+/* список особенностей */
+
+/* Список фич тарифа */
+.tariff-card__list {
+    list-style: none;
+    padding: 16px 0 10px;
+    border-top: 1px solid var(--color-border-light);
+    border-bottom: 1px solid var(--color-border-light);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Один пункт списка */
+.tariff-card__item {
+    display: flex;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--color-text-secondary);
+}
+
+/* Буллит иконка для списка */
+.tariff-card__bullet {
+    width: 13px;
+    height: 10px;
+    flex-shrink: 0;
+    background: url('/src/assets/img/check.svg') center/contain no-repeat;
+    margin-top: 4px;
+    border: none;
+}
+
+/* кнопки в карточках */
+
+/* Кнопка в карточке тарифа */
+.tariff-card__btn {
+    margin-top: 18px;
+    width: 100%;
+    border-radius: var(--radius-xxs);
+    font-size: 14px;
+}
+
+/* левая и правая — outline: оранжевый текст и обводка, фон прозрачный */
+.tariff-card__btn.btn--outline {
+    background: transparent;
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+/* центральная — залитая оранжевая */
+.tariff-card__btn--filled {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-surface);
+}
+
+/* футер под тарифами */
+
+/* Подвал секции тарифов */
+.tariffs__footer {
+    text-align: center;
+}
+
+/* Текст-пояснение в подвале */
+.tariffs__footer-text {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    margin-bottom: 8px;
+}
+
+/* Кнопка ссылки на индивидуальный тариф */
+.tariffs__footer-link {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 14px;
+    color: var(--color-accent);
+    text-decoration: underline;
+    cursor: pointer;
+}

@@ -1,0 +1,13 @@
+/* Отступы для якорей секций */
+
+#hero,
+#support,
+#support-exp,
+#tariffs,
+#cases,
+#team,
+#reviews,
+#partners,
+#contacts {
+    scroll-margin-top: 80px;
+}
