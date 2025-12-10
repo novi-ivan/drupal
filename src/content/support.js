@@ -12,44 +12,44 @@ export const supportItems = [
     {
         icon: competency1,
         bg: iconBg,
-        text: 'Добавление информации на сайт, создание новых разделов',
+        text: 'Добавление\n информации на сайт,\n создание новых\n разделов',
     },
     {
         icon: competency2,
         bg: iconBg,
-        text: 'Разработка и оптимизация модулей сайта',
+        text: 'Разработка\n и оптимизация\n модулей сайта',
     },
     {
         icon: competency3,
         bg: iconBg,
-        text: 'Интеграция с CRM, 1С, платежными системами, любыми веб-сервисами',
+        text: 'Интеграция с CRM,\n 1С, платежными\n системами, любыми веб-сервисами',
     },
     {
         icon: competency4,
         bg: iconBg,
-        text: 'Любые доработки функционала и дизайна',
+        text: 'Любые доработки\n функционала\n и дизайна',
     },
     {
         icon: competency5,
         bg: iconBg,
-        text: 'Аудит и мониторинг безопасности Drupal сайтов',
+        text: 'Аудит и мониторинг\n безопасности Drupal\n сайтов',
     },
     {
         icon: competency6,
         bg: iconBg,
-        text: 'Миграция, импорт контента и апгрейд Drupal',
+        text: 'Миграция, импорт\n контента и апгрейд\n Drupal',
     },
     {
         icon: competency7,
         bg: iconBg,
-        text: 'Оптимизация и ускорение Drupal-сайтов',
+        text: 'Оптимизация\n и ускорение\n Drupal-сайтов',
     },
     {
         icon: competency8,
         bg: iconBg,
-        text: 'Веб-маркетинг, консультации и работы по SEO',
+        text: 'Веб-маркетинг,\n консультации\n и работы по SEO',
     },
 ]
 
-export const supportTitle = '13 лет совершенствуем\nкомпетенции в Drupal поддержке!'
+export const supportTitle = '13 лет совершенствуем\nкомпетенции в Drupal\n поддержке!'
 export const supportSubtitle = 'Разрабатываем и оптимизируем модули, расширяем функциональность сайтов, обновляем дизайн'
