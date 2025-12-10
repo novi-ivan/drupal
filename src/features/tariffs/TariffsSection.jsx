@@ -12,7 +12,7 @@ export function TariffsSection() {
                         <article
                             key={idx}
                             className={
-                                'tariff-card' +
+                                `tariff-card tariff-card--${idx + 1}` +
                                 (tariff.type === 'primary' ? ' tariff-card--primary' : '')
                             }
                         >

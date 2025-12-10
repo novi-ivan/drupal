@@ -45,6 +45,7 @@
     color: #fff;
     transition: opacity 0.2s ease;
     white-space: nowrap;
+    cursor: pointer;
 }
 
 /* Оранжевая линия у активного пункта */
