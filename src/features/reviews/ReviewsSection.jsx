@@ -1,8 +1,18 @@
-import React from 'react'
-import reviewLogo from '../../assets/img/review-winamp-logo.png'
+import React, { useMemo, useState } from 'react'
 import reviewBgShape from '../../assets/img/review-quote-bg.svg'
+import { reviews } from '../../content/reviews'
 
 export function ReviewsSection() {
+    const [current, setCurrent] = useState(0)
+    const total = reviews.length
+
+    const review = useMemo(() => reviews[current], [current])
+
+    const next = () => setCurrent((prev) => (prev + 1) % total)
+    const prev = () => setCurrent((prev) => (prev - 1 + total) % total)
+
+    const formatNumber = (value) => String(value).padStart(2, '0')
+
     return (
         <section id="reviews" className="reviews">
             <div className="container">
@@ -21,16 +31,16 @@ export function ReviewsSection() {
                             <div className="reviews__content">
                                 <img
                                     className="reviews__logo"
-                                    src={reviewLogo}
-                                    alt="Winamp"
+                                    src={review.logo}
+                                    alt={review.alt}
                                 />
 
-                                <a className="reviews__headline" href="#">
-                                    Команда Drupal Coder вызвала <br /> только положительные <br /> впечатления!
-                                </a>
+                                <p className="reviews__headline">
+                                    {review.headline}
+                                </p>
 
                                 <p className="reviews__author">
-                                    Нуреев Александр, менеджер проекта Winamp <br /> Russian Community
+                                    {review.author}
                                 </p>
                             </div>
 
@@ -41,7 +51,7 @@ export function ReviewsSection() {
                                     type="button"
                                     className="reviews__arrow reviews__arrow--prev"
                                     aria-label="Предыдущий отзыв"
-                                    disabled
+                                    onClick={prev}
                                 >
                                     <svg
                                         width="16"
@@ -59,14 +69,15 @@ export function ReviewsSection() {
                                 </button>
 
                                 <div className="reviews__counter">
-                                    <span className="reviews__counter-current">01</span>
-                                    <span className="reviews__counter-total">/ 14</span>
+                                    <span className="reviews__counter-current">{formatNumber(current + 1)}</span>
+                                    <span className="reviews__counter-total">/ {formatNumber(total)}</span>
                                 </div>
 
                                 <button
                                     type="button"
                                     className="reviews__arrow reviews__arrow--next"
                                     aria-label="Следующий отзыв"
+                                    onClick={next}
                                 >
                                     <svg
                                         width="16"
