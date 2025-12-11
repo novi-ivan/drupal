@@ -11,10 +11,13 @@
 /* Заголовок отзывов */
 .reviews__title {
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
     font-size: 42px;
+    font-style: normal;
     font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 40px;
+    line-height: normal;
+    color: var(--main-black, #050C33);
+    margin-bottom: 80px;
 }
 
 /* Обёртка стекa карточек */
@@ -25,10 +28,10 @@
 /* Фоновая фигурка слева */
 .reviews__bg-shape {
     position: absolute;
-    left: -140px;
-    top: -40px;
+    left: -120px;
+    top: -150px;
     opacity: 0.04;
-    width: 320px;
+    width: 240px;
     pointer-events: none;
 }
 
@@ -43,7 +46,7 @@
 .reviews__card-stack {
     position: relative;
     max-width: 980px;
-    margin: 0 auto;
+    margin: 46px auto 0;
     height: 500px;
 }
 
@@ -53,38 +56,38 @@
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    border-radius: var(--radius-xs);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
     box-shadow: 0 4px 60px rgba(161, 161, 161, 0.25);
-    background: var(--color-surface);
+    background: #FFF;
 }
 
 /* Призрачная карточка снизу */
 .reviews__card--ghost {
-    height: 450px;
-    top: 22px;
-    opacity: 0.5;
-    width: 90%;
+    width: 1052px;
+    height: 457px;
+    top: -10px;
 }
 
 /* Призрачная карточка сверху */
 .reviews__card--ghost-top {
+    width: 924px;
     height: 466px;
-    top: 0;
+    top: -35px;
     opacity: 0.34;
-    width: 82%;
 }
 
 /* Активная карточка отзыва */
 .reviews__card--main {
     position: relative;
     top: 32px;
+    width: 980px;
     height: 416px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
     align-items: center;
-    justify-content: space-between;
-    padding: 64px 72px;
-    gap: 40px;
+    padding: 80px 128px;
+    column-gap: 60px;
 }
 
 /* Левая колонка: логотип и текст отзыва */
@@ -93,7 +96,7 @@
     max-width: 520px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 41px;
 }
 
 /* Логотип компании в отзыве */
@@ -105,35 +108,50 @@
 
 /* Заголовок/ссылка отзыва */
 .reviews__headline {
-    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-style: normal;
     font-weight: 700;
-    line-height: 1.4;
-    color: var(--color-text-dark);
-    text-decoration: underline;
+    line-height: normal;
+    color: var(--main-black, #050C33);
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
 }
 
 /* Автор отзыва */
 .reviews__author {
+    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
+    font-style: normal;
     font-weight: 500;
-    line-height: 22px;
-    color: rgba(5, 12, 51, 0.5);
+    line-height: normal;
+    color: var(--main-black, #050C33);
+    opacity: 0.5;
+    margin-top: -10px; /* поднимаем автора ближе к заголовку */
 }
 
 /* Разделительная линия между колонками */
 .reviews__divider {
-    width: 1px;
+    width: 0;
+    height: 282.5px;
     align-self: stretch;
-    background: rgba(0, 0, 0, 0.1);
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 67px 30px; /* отступы вокруг разделителя, не трогая счётчик */
 }
 
 /* Правая колонка: стрелки и счётчик */
 .reviews__controls {
-    flex: 0 0 auto;
+    justify-self: center;
     display: flex;
     align-items: center;
-    gap: 16px;
-    min-width: 140px;
+    justify-content: center;
+    gap: 46px;
+    min-width: 220px;
+    white-space: nowrap;
 }
 
 /* Кнопки стрелок */
@@ -165,19 +183,23 @@
     display: flex;
     align-items: center;
     gap: 4px;
-    font-size: 18px;
-    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
 }
 
 /* Текущий номер отзыва */
 .reviews__counter-current {
-    color: var(--color-text-dark);
-    font-weight: 600;
+    color: var(--main-black, #050C33);
+    font-weight: 400;
 }
 
 /* Общее количество отзывов */
 .reviews__counter-total {
-    color: #e0e0e0;
+    color: var(--Gray-5, #E0E0E0);
+    font-weight: 400;
 }
 
 @media (max-width: 1024px) {

@@ -26,11 +26,11 @@ export function ReviewsSection() {
                                 />
 
                                 <a className="reviews__headline" href="#">
-                                    Команда Drupal Coder вызвала только положительные впечатления!
+                                    Команда Drupal Coder вызвала <br /> только положительные <br /> впечатления!
                                 </a>
 
                                 <p className="reviews__author">
-                                    Нуреев Александр, менеджер проекта Winamp Russian Community
+                                    Нуреев Александр, менеджер проекта Winamp <br /> Russian Community
                                 </p>
                             </div>
 
@@ -45,17 +45,15 @@ export function ReviewsSection() {
                                 >
                                     <svg
                                         width="16"
-                                        height="32"
-                                        viewBox="0 0 16 32"
+                    height="32"
+                    viewBox="0 0 18 33"
                                         fill="none"
                                         xmlns="http://www.w3.org/2000/svg"
                                     >
                                         <path
-                                            d="M12 4L4 16L12 28"
-                                            stroke="#050C33"
-                                            strokeWidth="1.2"
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
+                                            d="M16.7072 0.353516L0.707153 16.3535L16.7072 32.3535"
+                        stroke="#050C33"
+                        strokeWidth="1"
                                         />
                                     </svg>
                                 </button>
@@ -72,17 +70,15 @@ export function ReviewsSection() {
                                 >
                                     <svg
                                         width="16"
-                                        height="32"
-                                        viewBox="0 0 16 32"
+                    height="32"
+                    viewBox="0 0 18 33"
                                         fill="none"
                                         xmlns="http://www.w3.org/2000/svg"
                                     >
                                         <path
-                                            d="M4 4L12 16L4 28"
-                                            stroke="#050C33"
-                                            strokeWidth="1.2"
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
+                                            d="M0.353516 0.353516L16.3535 16.3535L0.353516 32.3535"
+                        stroke="#050C33"
+                        strokeWidth="1"
                                         />
                                     </svg>
                                 </button>
