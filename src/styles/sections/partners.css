@@ -2,48 +2,75 @@
 
 /* Секция партнёров */
 .partners {
+    --partners-card-width: 291px;
+    --partners-card-height: 155px;
+    --partners-gap: 20px;
+
     background: var(--color-surface);
     color: var(--color-text-dark);
-    padding: 72px 0 80px;
+    padding: 160px 0 80px;
 }
 
 /* Заголовок секции партнёров */
 .partners__title {
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
     font-size: 42px;
+    font-style: normal;
     font-weight: 700;
-    line-height: 1.1;
+    line-height: normal;
+    color: var(--main-black, #050C33);
     margin-bottom: 12px;
 }
 
 /* Подзаголовок секции партнёров */
 .partners__subtitle {
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
+    font-style: normal;
     font-weight: 500;
     line-height: 22px;
-    opacity: 0.7;
+    color: var(--main-black, #050C33);
     max-width: 760px;
-    margin: 0 auto 28px;
+    margin: 0 auto 42px;
 }
 
-/* Сетка карточек логотипов */
-.partners__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
+/* Вьюпорт – окно, внутри которого «едут» лого */
+.partners__viewport {
+    overflow: hidden;
+    padding: 0 12px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--partners-gap); /* вертикальный отступ = горизонтальному */
+}
+
+/* Одна строка с логотипами */
+.partners__row {
+    display: flex;
+    flex-wrap: nowrap;           /* НИКОГДА не переносим на следующую строку */
+    gap: var(--partners-gap);
+    align-items: center;
+    will-change: transform;
+    min-width: max-content;      /* ширина = сумма карточек + gap для плавности */
+    transform: translate3d(0, 0, 0);
+}
+
+/* нижний ряд чуть сдвигаем, чтобы лого не совпадали по сетке */
+.partners__row--bottom {
+    margin-top: 20px;
 }
 
 /* Карточка логотипа */
 .partners__card {
-    height: 155px;
-    border: 1px solid #e5e7ef;
-    border-radius: var(--radius-xs);
-    background: var(--color-surface);
+    flex: 0 0 var(--partners-card-width);             /* фиксированная ширина, НЕ растягиваемся */
+    height: var(--partners-card-height);
     display: flex;
-    align-items: center;
     justify-content: center;
-    padding: 20px;
+    align-items: center;
+    border: 1px solid #e5e7ef;
+    border-radius: 5px;
+    background: var(--color-surface);
 }
 
 /* Изображение логотипа */
@@ -55,6 +82,17 @@
     object-fit: contain;
 }
 
+/* бесконечный скролл */
+@keyframes partners-scroll {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+/* Мобильная адаптация */
 @media (max-width: 768px) {
     .partners {
         padding: 60px 0 68px;
