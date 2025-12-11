@@ -2,9 +2,27 @@
 
 /* Секция тарифов */
 .tariffs {
+    position: relative;
+    overflow: hidden;
     padding-top: 100px;
     padding-bottom: 80px;
-    background: var(--color-surface-muted);
+    background: var(--color-surface);
+}
+
+.tariffs::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('../../assets/img/D-background.svg') no-repeat;
+    background-position: calc(50% + 340px) 0; /* фиксируем к центру вьюпорта, чтобы не уезжало при зуме */
+    background-size: 760px auto;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.tariffs .container {
+    position: relative;
+    z-index: 1;
 }
 
 /* Заголовок секции тарифов */
@@ -67,6 +85,12 @@ transform: scale(1.07);
     .tariff-card--primary {
         padding-top: 32px;
         padding-bottom: 32px;
+    }
+
+    .tariffs::before {
+        background-position: center top;
+        background-size: 843px auto;
+        opacity: 0.55;
     }
 }
 
