@@ -8,11 +8,8 @@
         radial-gradient(140% 120% at 24% 8%, rgba(255, 255, 255, 0.08), transparent 62%),
         linear-gradient(125deg, #040613 0%, #05081a 55%, #050b21 100%);
     color: var(--color-surface);
-    padding: 96px 0 104px;
-    max-width: 1440px;
-    width: 100%;
-    min-height: 816px;
-    margin: 0 auto;
+    padding: 96px 0 54px;
+    min-height: 699px;
 }
 
 /* Общий контейнер фоновых картинок */
@@ -31,20 +28,20 @@
 
 /* Верхняя фоновая картинка */
 .contact__bg--top {
-    right: -80px;
-    top: -60px;
-    width: 420px;
-    transform: rotate(-13deg);
-    opacity: 0.9;
+    right: 605px;
+    top: 0px;
+    width: 275px;
+    transform: rotate(0deg);
+    opacity: 1;
 }
 
 /* Нижняя фоновая картинка */
 .contact__bg--bottom {
-    right: -220px;
-    bottom: -220px;
-    width: 640px;
-    transform: rotate(-13deg);
-    opacity: 0.9;
+    right: 0px;
+    bottom: 0px;
+    width: 462px;
+    transform: rotate(0deg);
+    opacity: 1;
 }
 
 /* Внутренняя сетка контактов */
@@ -61,7 +58,7 @@
 .contact__info {
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    gap: 24px;
     max-width: 520px;
 }
 
@@ -73,6 +70,7 @@
     font-weight: 700;
     line-height: normal;
     color: #fff;
+    margin: 0 0 19px;
 }
 
 /* Описание в секции контактов */
@@ -83,21 +81,24 @@
     font-weight: 500;
     line-height: 22px;
     color: #fff;
+    margin: 0;
+    opacity: 0.7;
 }
 
 /* Список ссылок (телефон/почта) */
 .contact__links {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    margin-top: 12px;
+    gap: 5px;
+    margin-top: 24px;
+    align-items: flex-start; /* не растягиваем ссылки по ширине, кликабельная область только по контенту */
 }
 
 /* Ссылка с иконкой */
 .contact__link {
     display: inline-flex;
     align-items: center;
-    gap: 14px;
+    gap: 18px;
     color: var(--color-surface);
     font-size: 18px;
     font-weight: 700;
@@ -135,11 +136,12 @@
 /* Форма заявки */
 .contact__form {
     display: grid;
-    gap: 14px;
+    gap: 8px;
     position: relative;
     z-index: 1;
     max-width: 480px;
     width: 100%;
+    margin-top: 24px;
 }
 
 /* Обёртка поля формы */
@@ -150,8 +152,9 @@
 /* Поля формы */
 .contact__field input,
 .contact__field textarea {
-    width: 100%;
-    padding: 18px;
+    width: 456px;
+    height: 67px;
+    padding: 0px 0px 0px 24px;
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: var(--radius-xs);
@@ -165,8 +168,9 @@
 
 /* Многострочное поле */
 .contact__field textarea {
-    min-height: 120px;
-    resize: vertical;
+    min-height: 111px;
+    resize: none;
+    padding-top: 26px;
 }
 
 /* Плейсхолдеры полей */
@@ -187,6 +191,7 @@
     grid-template-columns: auto 1fr;
     align-items: center;
     gap: 10px;
+    position: relative;
     margin: 6px 0 4px;
     font-size: 12px;
     color: var(--color-surface);
@@ -196,7 +201,14 @@
 .contact__checkbox input {
     position: absolute;
     opacity: 0;
-    pointer-events: none;
+    pointer-events: auto; /* кликаем по настоящему инпуту */
+    width: 25px;
+    height: 25px;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+    margin: 0;
+    z-index: 2;
 }
 
 /* Визуальная коробка чекбокса */
@@ -204,15 +216,28 @@
     width: 25px;
     height: 25px;
     border-radius: var(--radius-xs);
-    border: 2px solid rgba(255, 255, 255, 0.5);
+    border: none;
+    background: url('../../assets/img/check-box.svg') center/cover no-repeat;
     display: grid;
     place-items: center;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
 }
 
 /* Галочка внутри чекбокса */
 .contact__checkbox-box img {
     width: 14px;
     height: 10px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.contact__checkbox input:checked + .contact__checkbox-box {
+    background: url('../../assets/img/check-box.svg') center/cover no-repeat;
+}
+
+.contact__checkbox input:checked + .contact__checkbox-box img {
+    opacity: 1;
 }
 
 /* Текст согласия */
@@ -229,7 +254,7 @@
 
 /* Кнопка отправки формы */
 .contact__submit {
-    width: 100%;
+    width: 480px;
     height: 60px;
     background: #f14d34;
     border: none;
@@ -257,8 +282,9 @@
 .contact__footnote {
     position: relative;
     z-index: 1;
-    margin-top: 48px;
-    padding-top: 20px;
+    margin-top: 71px;
+    padding-top: 56px;
+    padding-bottom: 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     flex-direction: column;
@@ -270,6 +296,10 @@
     line-height: normal;
     color: #fff;
     opacity: 0.5;
+}
+
+.contact__footnote p {
+    margin: 0; /* убираем внешние отступы, чтобы gap было ровным */
 }
 
 /* Вспомогательный класс для скрытого текста */

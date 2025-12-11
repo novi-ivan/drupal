@@ -1,9 +1,9 @@
 import React from 'react'
-import contactBgTop from '../../assets/img/contact-bg-top.png'
-import contactBgBottom from '../../assets/img/contact-bg-bottom.png'
+import contactBgTop from '../../assets/img/D-flying.svg'
+import contactBgBottom from '../../assets/img/D-flying-bottom.svg'
 import contactIconPhone from '../../assets/img/contact-icon-phone.svg'
 import contactIconMail from '../../assets/img/contact-icon-mail.svg'
-import contactIconCheck from '../../assets/img/contact-icon-check.svg'
+import checkIcon from '../../assets/img/check.svg'
 import {
     contactEmail,
     contactEmailHref,
@@ -69,7 +69,7 @@ export function ContactSection() {
                     <label className="contact__checkbox">
                         <input type="checkbox" defaultChecked />
                         <span className="contact__checkbox-box">
-                            <img src={contactIconCheck} alt="" />
+                            <img src={checkIcon} alt="" />
                         </span>
                         <span className="contact__checkbox-label">
                             {consentText}
