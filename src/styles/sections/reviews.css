@@ -1,6 +1,6 @@
-/* REVIEWS */
 
-/* Секция отзывов */
+
+
 .reviews {
     position: relative;
     background: var(--color-surface);
@@ -8,7 +8,7 @@
     padding: 80px 0 96px;
 }
 
-/* Заголовок отзывов */
+
 .reviews__title {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
@@ -20,12 +20,12 @@
     margin-bottom: 80px;
 }
 
-/* Обёртка стекa карточек */
+
 .reviews__wrap {
     position: relative;
 }
 
-/* Фоновая фигурка слева */
+
 .reviews__bg-shape {
     position: absolute;
     left: -120px;
@@ -35,14 +35,14 @@
     pointer-events: none;
 }
 
-/* Картинка фоновой фигурки */
+
 .reviews__bg-shape img {
     width: 100%;
     height: auto;
     display: block;
 }
 
-/* Контейнер стопки карточек */
+
 .reviews__card-stack {
     position: relative;
     max-width: 980px;
@@ -50,7 +50,7 @@
     height: 500px;
 }
 
-/* Базовая карточка отзыва */
+
 .reviews__card {
     position: absolute;
     left: 50%;
@@ -62,14 +62,14 @@
     background: #FFF;
 }
 
-/* Призрачная карточка снизу */
+
 .reviews__card--ghost {
     width: 1052px;
     height: 457px;
     top: -10px;
 }
 
-/* Призрачная карточка сверху */
+
 .reviews__card--ghost-top {
     width: 924px;
     height: 466px;
@@ -77,7 +77,7 @@
     opacity: 0.34;
 }
 
-/* Активная карточка отзыва */
+
 .reviews__card--main {
     position: relative;
     top: 32px;
@@ -90,7 +90,7 @@
     column-gap: 60px;
 }
 
-/* Левая колонка: логотип и текст отзыва */
+
 .reviews__content {
     flex: 1 1 auto;
     max-width: 520px;
@@ -99,14 +99,14 @@
     gap: 41px;
 }
 
-/* Логотип компании в отзыве */
+
 .reviews__logo {
     width: 170px;
     height: auto;
     object-fit: contain;
 }
 
-/* Заголовок/ссылка отзыва */
+
 .reviews__headline {
     font-family: 'Montserrat', sans-serif;
     font-size: 24px;
@@ -122,7 +122,7 @@
     text-underline-position: from-font;
 }
 
-/* Автор отзыва */
+
 .reviews__author {
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
@@ -131,19 +131,19 @@
     line-height: normal;
     color: var(--main-black, #050C33);
     opacity: 0.5;
-    margin-top: -10px; /* поднимаем автора ближе к заголовку */
+    margin-top: -10px; 
 }
 
-/* Разделительная линия между колонками */
+
 .reviews__divider {
     width: 0;
     height: 282.5px;
     align-self: stretch;
     border-left: 1px solid rgba(0, 0, 0, 0.2);
-    margin: 67px 30px; /* отступы вокруг разделителя, не трогая счётчик */
+    margin: 67px 30px; 
 }
 
-/* Правая колонка: стрелки и счётчик */
+
 .reviews__controls {
     justify-self: center;
     display: flex;
@@ -154,7 +154,7 @@
     white-space: nowrap;
 }
 
-/* Кнопки стрелок */
+
 .reviews__arrow {
     width: 36px;
     height: 36px;
@@ -178,7 +178,7 @@
     cursor: default;
 }
 
-/* Контейнер счётчика отзывов */
+
 .reviews__counter {
     display: flex;
     align-items: center;
@@ -190,13 +190,13 @@
     line-height: 28px;
 }
 
-/* Текущий номер отзыва */
+
 .reviews__counter-current {
     color: var(--main-black, #050C33);
     font-weight: 400;
 }
 
-/* Общее количество отзывов */
+
 .reviews__counter-total {
     color: var(--Gray-5, #E0E0E0);
     font-weight: 400;

@@ -1,6 +1,6 @@
-/* TARIFFS */
 
-/* Секция тарифов */
+
+
 .tariffs {
     position: relative;
     overflow: hidden;
@@ -14,7 +14,7 @@
     position: absolute;
     inset: 0;
     background: url('../../assets/img/D-background.svg') no-repeat;
-    background-position: calc(50% + 340px) 0; /* фиксируем к центру вьюпорта, чтобы не уезжало при зуме */
+    background-position: calc(50% + 340px) 0; 
     background-size: 760px auto;
     pointer-events: none;
     z-index: 0;
@@ -25,7 +25,7 @@
     z-index: 1;
 }
 
-/* Заголовок секции тарифов */
+
 .tariffs__title {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
@@ -36,9 +36,9 @@
     color: #000;
 }
 
-/* карточки */
 
-/* Сетка карточек тарифов */
+
+
 .tariffs__cards {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -54,7 +54,7 @@
     }
 }
 
-/* Базовая карточка тарифа */
+
 .tariff-card {
     position: relative;
     background: var(--color-surface);
@@ -68,8 +68,8 @@
     z-index: 1;
 }
 
-/* центральная карточка*/
-/* Акцентная карточка тарифа */
+
+
 .tariff-card--primary {
 transform: scale(1.07);
     transform-origin: center;
@@ -94,13 +94,13 @@ transform: scale(1.07);
     }
 }
 
-/* Шапка карточки */
+
 .tariff-card__header {
     margin-bottom: 6px;
     padding-left: 30px;
 }
 
-/* Название тарифа */
+
 .tariff-card__name {
     font-family: 'Montserrat', sans-serif;
     font-size: 22px;
@@ -110,7 +110,7 @@ transform: scale(1.07);
     margin: 33px 0 0px;
 }
 
-/* Строка цены */
+
 .tariff-card__price {
     font-family: 'Montserrat', sans-serif;
     font-size: 10px;
@@ -119,18 +119,18 @@ transform: scale(1.07);
     margin: 0 0 0%;
     text-transform: uppercase;
     display: inline-flex;
-    align-items: flex-start; /* поднимает символ ₽ к верхней границе числа */
+    align-items: flex-start; 
     gap: 5px;
 }
 
-/* Число цены */
+
 .tariff-card__price-value {
     font-size: 72px;
     line-height: 72px;
     font-weight: 700;
 }
 
-/* Валюта цены */
+
 .tariff-card__price-currency {
     font-size: 28px;
     line-height: 28px;
@@ -140,14 +140,14 @@ transform: scale(1.07);
 }
 
 .tariff-card--1 .tariff-card__btn {
-  margin-top: 20px; /* вместо общих 43px */
+  margin-top: 20px; 
 }
 
 .tariff-card--3 .tariff-card__btn {
-    margin-top: 20px; /* поднято на 2px относительно базовых 43px */
+    margin-top: 20px; 
 }
 
-/* Примечание (в час) */
+
 .tariff-card__note {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
@@ -156,12 +156,12 @@ transform: scale(1.07);
     text-transform: none;
     letter-spacing: normal;
     color: var(--main-black, #050C33);
-    margin: 0 0 0px; /* расстояние до линии */
+    margin: 0 0 0px; 
 }
 
-/* список особенностей */
 
-/* Список фич тарифа */
+
+
 .tariff-card__list {
     list-style: none;
     padding: 16px 30px 10px;
@@ -179,7 +179,7 @@ transform: scale(1.07);
     background: rgba(0, 0, 0, 0.2);
 }
 
-/* Один пункт списка */
+
 .tariff-card__item {
     display: flex;
     gap: 18px;
@@ -190,7 +190,7 @@ transform: scale(1.07);
     color: var(--main-black, #050C33);
 }
 
-/* Буллит иконка для списка */
+
 .tariff-card__bullet {
     width: 13px;
     height: 10px;
@@ -200,9 +200,9 @@ transform: scale(1.07);
     border: none;
 }
 
-/* кнопки в карточках */
 
-/* Кнопка в карточке тарифа */
+
+
 .tariff-card__btn {
     margin: 43px 30px 0;
     width: calc(100% - 60px);
@@ -222,28 +222,28 @@ transform: scale(1.07);
     cursor: pointer;
 }
 
-/* левая и правая — outline: оранжевый текст и обводка, фон прозрачный */
+
 .tariff-card__btn.btn--outline {
     background: transparent;
     color: var(--icons-1, #F14D34);
     border-color: var(--icons-1, #F14D34);
 }
 
-/* центральная — залитая оранжевая */
+
 .tariff-card__btn--filled {
     background: var(--icons-1, #F14D34);
     border-color: var(--icons-1, #F14D34);
     color: var(--color-surface);
 }
 
-/* футер под тарифами */
 
-/* Подвал секции тарифов */
+
+
 .tariffs__footer {
     text-align: center;
 }
 
-/* Текст-пояснение в подвале */
+
 .tariffs__footer-text {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
@@ -253,7 +253,7 @@ transform: scale(1.07);
     margin-bottom: 8px;
 }
 
-/* Кнопка ссылки на индивидуальный тариф */
+
 .tariffs__footer-link {
     background: none;
     border: none;

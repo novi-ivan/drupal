@@ -1,13 +1,13 @@
-/* SUPPORT SECTION */
 
-/* Секция "13 лет совершенствуем..." */
+
+
 .support {
     text-align: left;
     padding-top: 80px;
     padding-bottom: 80px;
 }
 
-/* Заголовок секции поддержки */
+
 .support__title {
     font-family: 'Montserrat', sans-serif;
     font-size: 42px;
@@ -15,27 +15,27 @@
     line-height: 1.2;
     color: #050c33;
     margin-bottom: 20px;
-    white-space: pre-line; /* поддержка переносов */
+    white-space: pre-line; 
 }
 
-/* Подзаголовок секции поддержки */
+
 .support__subtitle {
     font-size: 16px;
     color: #000000;
     max-width: 520px;
     margin-bottom: 48px;
-    white-space: pre-line; /* поддержка переносов */
+    white-space: pre-line; 
 }
 
-/* GRID: 4 × 2 */
-/* Сетка карточек компетенций */
+
+
 .support__grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 40px;
 }
 
-/* DESKTOP */
+
 @media (min-width: 768px) {
     .support__grid {
         grid-template-columns: repeat(2, 1fr);
@@ -49,7 +49,7 @@
     }
 }
 
-/* Карточка компетенции */
+
 .support__item {
     position: relative;
     display: flex;
@@ -58,7 +58,7 @@
     max-width: 240px;
 }
 
-/* Иконка компетенции */
+
 .support__icon {
     position: relative;
     z-index: 1;
@@ -66,7 +66,7 @@
     height: 60px;
 }
 
-/* Фоновая подложка иконки */
+
 .support__icon-bg {
     position: absolute;
     top: 10px;
@@ -75,48 +75,48 @@
     z-index: 0;
 }
 
-/* Текст компетенции */
+
 .support__text {
     font-size: 15px;
     line-height: 1.55;
     color: #000000;
-    white-space: pre-line; /* поддержка переносов из supportItems */
+    white-space: pre-line; 
 }
 
-/* SUPPORT + EXPERTISE (двойной фон) */
 
-/* Секция "Поддержка от Drupal-coder" + экспертиза */
+
+
 .support-exp {
     position: relative;
     background: linear-gradient(
             to bottom,
             var(--color-surface) 0%,
-            var(--color-surface) 40%,   /* белый под карточками */
-            #050816 40%,   /* дальше тёмный */
+            var(--color-surface) 40%,   
+            #050816 40%,   
             #050816 100%
     );
     color: #0f172a;
 }
 
-/* верхняя часть */
 
-/* Обёртка верхнего блока с карточками */
+
+
 .support-exp__top {
     margin-bottom: 64px;
 }
 
-/* Заголовок верхнего блока */
+
 .support-exp__title {
     font-size: 32px;
     font-weight: 700;
     text-align: center;
     margin-bottom: 40px;
-    white-space: pre-line; /* поддержка переносов */
+    white-space: pre-line; 
 }
 
-/* грид карточек */
 
-/* Сетка карточек преимуществ */
+
+
 .support-exp__grid {
     position: relative;
     z-index: 1;
@@ -137,7 +137,7 @@
     }
 }
 
-/* Карточка преимущества */
+
 .support-exp__card {
     position: relative;
     background: var(--color-surface);
@@ -147,7 +147,7 @@
     overflow: hidden;
 }
 
-/* Декоративный фон карточки */
+
 .support-exp__card-bg {
     position: absolute;
     right: 0;
@@ -156,7 +156,7 @@
     pointer-events: none;
 }
 
-/* Порядковый номер карточки */
+
 .support-exp__num {
     font-size: 14px;
     font-weight: 600;
@@ -164,29 +164,29 @@
     margin-bottom: 10px;
 }
 
-/* Заголовок карточки */
+
 .support-exp__card-title {
     font-size: 17px;
     font-weight: 700;
     margin-bottom: 8px;
     color: #111827;
-    white-space: pre-line; /* поддержка переносов */
+    white-space: pre-line; 
 }
 
-/* Описание карточки */
+
 .support-exp__card-text {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 500;
-    line-height: 22px; /* 137.5% */
+    line-height: 22px; 
     color: var(--main-black, #050c33);
     opacity: 0.7;
-    white-space: pre-line; /* поддержка переносов */
+    white-space: pre-line; 
 }
 
-/* нижняя часть: экспертиза */
 
-/* Блок с иллюстрацией и списком экспертизы */
+
+
 .support-exp__bottom {
     margin-top: 50px;
     display: flex;
@@ -204,7 +204,7 @@
     }
 }
 
-/* Контейнер для изображения аналитики */
+
 .support-exp__image-wrap {
     flex: 0 0 auto;
     max-width: 620px;
@@ -213,7 +213,7 @@
     margin-left: -120px;
 }
 
-/* Картинка ноутбука */
+
 .support-exp__image {
     width: 100%;
     height: auto;
@@ -237,15 +237,15 @@
     }
 }
 
-/* Колонка с текстом экспертизы */
+
 .support-exp__info {
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
-    gap: 66px; /* расстояние между заголовком и списком */
+    gap: 66px; 
 }
 
-/* Заголовок блока экспертизы */
+
 .support-exp__info-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 42px;
@@ -253,10 +253,10 @@
     line-height: normal;
     color: var(--White, #fff);
     margin: 0;
-    white-space: pre-line; /* поддержка переносов */
+    white-space: pre-line; 
 }
 
-/* Сетка пунктов экспертизы */
+
 .support-exp__info-grid {
     display: grid;
     gap: 20px 40px;
@@ -268,14 +268,14 @@
     }
 }
 
-/* Один пункт экспертизы */
+
 .support-exp__info-item {
     display: flex;
     align-items: stretch;
     gap: 14px;
 }
 
-/* Цветная полоса слева от текста пункта */
+
 .support-exp__info-line {
     width: 3px;
     border-radius: var(--radius-full);
@@ -283,7 +283,7 @@
     flex-shrink: 0;
 }
 
-/* Большая фоновая иконка Druplicon */
+
 .support-exp__bg-icon {
     position: absolute;
     right: -5px;
@@ -293,13 +293,13 @@
     pointer-events: none;
 }
 
-/* Контейнер секции (ограничивает фон) */
+
 .support-exp {
     position: relative;
     overflow: hidden;
 }
 
-/* Текст пункта экспертизы */
+
 .support-exp__info-text {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
@@ -307,5 +307,5 @@
     line-height: 22px;
     color: var(--White, #fff);
     opacity: 0.7;
-    white-space: pre-line; /* поддержка переносов */
+    white-space: pre-line; 
 }

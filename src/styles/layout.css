@@ -1,4 +1,4 @@
-/* Хедер: позиционируем бар над hero и добавляем тёмный градиент */
+
 .header {
     position: absolute;
     top: 0;
@@ -8,7 +8,7 @@
     background: linear-gradient(180deg, rgba(4, 6, 19, 0.7), rgba(4, 6, 19, 0.2) 70%, transparent);
 }
 
-/* Внутренний слой хедера: выравнивание логотипа/навигации/контактов */
+
 .header__inner {
     display: flex;
     align-items: center;
@@ -16,28 +16,28 @@
     z-index: 1;
 }
 
-/* Размеры/отступы логотипа */
+
 .header__logo img {
     height: 20px;
     width: 137px;
     padding-top: 34px;
 }
 
-/* Блок меню на десктопе */
+
 .header__nav {
-    display: none; /* mobile first */
+    display: none; 
     justify-content: center;
     gap: 30px;
     margin-top: 39px;
 }
 
-/* Ссылки меню: верхний регистр и подчёркивание активной */
+
 .header__link {
     font-family: 'Ubuntu', sans-serif;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
-    line-height: 10px; /* 83.333% */
+    line-height: 10px; 
     letter-spacing: 0.72px;
     text-transform: uppercase;
     position: relative;
@@ -48,7 +48,7 @@
     cursor: pointer;
 }
 
-/* Оранжевая линия у активного пункта */
+
 .header__link--active::after {
     content: '';
     position: absolute;
@@ -59,7 +59,7 @@
     background: var(--color-accent);
 }
 
-/* Правая часть: телефон, язык, бургер */
+
 .header__right {
     display: flex;
     align-items: center;
@@ -97,7 +97,7 @@
     display: block;
 }
 
-/* Иконка бургера (только мобилка) */
+
 .header__burger {
     display: inline-flex;
     flex-direction: column;
@@ -114,12 +114,12 @@
     background: var(--color-surface);
 }
 
-/* Десктоп: показываем меню, скрываем бургер */
+
 @media (min-width: 1024px) {
     .header__nav {
         display: flex;
         gap: 30px;
-        margin-right: 215px; /* расстояние до правого блока (контакты -> телефон) */
+        margin-right: 215px; 
     }
 
     .header__burger {
@@ -127,7 +127,7 @@
     }
 
     .header__left {
-        margin-right: 62px; /* расстояние между логотипом и меню */
+        margin-right: 62px; 
     }
 
     .header__right {
@@ -136,7 +136,7 @@
     }
 }
 
-/* Мобилка: скрываем телефон/язык, меняем выравнивание */
+
 @media (max-width: 1023.98px) {
     .header__phone,
     .header__lang {
@@ -149,11 +149,11 @@
     }
 }
 .section--white {
-    background: var(--color-surface);      /* белый фон */
-    color: #0f172a;           /* тёмный текст, чтобы читалось */
+    background: var(--color-surface);      
+    color: #0f172a;           
 }
 
-/* МОБИЛЬНОЕ МЕНЮ */
+
 
 .mobile-menu {
     position: fixed;
@@ -200,7 +200,7 @@
     width: 100%;
 }
 
-/* Состояние open */
+
 
 .mobile-menu--open {
     pointer-events: auto;
@@ -220,7 +220,7 @@
         display: none;
     }
 }
-/* Стили ссылок: hover */
+
 .header__link:hover {
     opacity: 0.6;
 }

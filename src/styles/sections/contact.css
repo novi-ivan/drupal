@@ -1,6 +1,6 @@
-/* CONTACT */
 
-/* Секция контактов */
+
+
 .contact {
     position: relative;
     overflow: hidden;
@@ -12,21 +12,21 @@
     min-height: 699px;
 }
 
-/* Общий контейнер фоновых картинок */
+
 .contact__bg {
     position: absolute;
     pointer-events: none;
     z-index: 0;
 }
 
-/* Картинка фона */
+
 .contact__bg img {
     display: block;
     width: 100%;
     height: auto;
 }
 
-/* Верхняя фоновая картинка */
+
 .contact__bg--top {
     right: 605px;
     top: 0px;
@@ -35,7 +35,7 @@
     opacity: 1;
 }
 
-/* Нижняя фоновая картинка */
+
 .contact__bg--bottom {
     right: 0px;
     bottom: 0px;
@@ -44,7 +44,7 @@
     opacity: 1;
 }
 
-/* Внутренняя сетка контактов */
+
 .contact__inner {
     position: relative;
     z-index: 1;
@@ -54,7 +54,7 @@
     align-items: flex-start;
 }
 
-/* Левая колонка с текстом */
+
 .contact__info {
     display: flex;
     flex-direction: column;
@@ -62,7 +62,7 @@
     max-width: 520px;
 }
 
-/* Заголовок секции контактов */
+
 .contact__title {
     font-family: 'Montserrat', sans-serif;
     font-size: 42px;
@@ -73,7 +73,7 @@
     margin: 0 0 19px;
 }
 
-/* Описание в секции контактов */
+
 .contact__text {
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
@@ -85,16 +85,16 @@
     opacity: 0.7;
 }
 
-/* Список ссылок (телефон/почта) */
+
 .contact__links {
     display: flex;
     flex-direction: column;
     gap: 5px;
     margin-top: 24px;
-    align-items: flex-start; /* не растягиваем ссылки по ширине, кликабельная область только по контенту */
+    align-items: flex-start; 
 }
 
-/* Ссылка с иконкой */
+
 .contact__link {
     display: inline-flex;
     align-items: center;
@@ -104,7 +104,7 @@
     font-weight: 700;
 }
 
-/* Телефонная ссылка (увеличенный шрифт) */
+
 .contact__link--phone {
     font-family: 'Montserrat', sans-serif;
     font-size: 32px;
@@ -113,7 +113,7 @@
     line-height: 150%;
 }
 
-/* Адрес email */
+
 .contact__mail {
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
@@ -126,14 +126,14 @@
     text-decoration-skip-ink: none;
 }
 
-/* Иконка у ссылки */
+
 .contact__icon {
     width: 24px;
     height: 24px;
     opacity: 0.5;
 }
 
-/* Форма заявки */
+
 .contact__form {
     display: grid;
     gap: 8px;
@@ -144,12 +144,12 @@
     margin-top: 24px;
 }
 
-/* Обёртка поля формы */
+
 .contact__field {
     display: block;
 }
 
-/* Поля формы */
+
 .contact__field input,
 .contact__field textarea {
     width: 456px;
@@ -166,14 +166,14 @@
     line-height: 16px;
 }
 
-/* Многострочное поле */
+
 .contact__field textarea {
     min-height: 111px;
     resize: none;
     padding-top: 26px;
 }
 
-/* Плейсхолдеры полей */
+
 .contact__field input::placeholder,
 .contact__field textarea::placeholder {
     color: #fff;
@@ -185,7 +185,7 @@
     line-height: 16px;
 }
 
-/* Чекбокс согласия */
+
 .contact__checkbox {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -197,11 +197,11 @@
     color: var(--color-surface);
 }
 
-/* Скрытый реальный чекбокс */
+
 .contact__checkbox input {
     position: absolute;
     opacity: 0;
-    pointer-events: auto; /* кликаем по настоящему инпуту */
+    pointer-events: auto; 
     width: 25px;
     height: 25px;
     left: 0;
@@ -211,7 +211,7 @@
     z-index: 2;
 }
 
-/* Визуальная коробка чекбокса */
+
 .contact__checkbox-box {
     width: 25px;
     height: 25px;
@@ -224,7 +224,7 @@
     pointer-events: none;
 }
 
-/* Галочка внутри чекбокса */
+
 .contact__checkbox-box img {
     width: 14px;
     height: 10px;
@@ -241,7 +241,7 @@
     opacity: 1;
 }
 
-/* Текст согласия */
+
 .contact__checkbox-label {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
@@ -250,10 +250,10 @@
     line-height: normal;
     color: #fff;
     opacity: 1;
-    white-space: pre-line; /* сохраняем переносы из текста consentText */
+    white-space: pre-line; 
 }
 
-/* Кнопка отправки формы */
+
 .contact__submit {
     width: 480px;
     height: 60px;
@@ -273,13 +273,13 @@
     transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-/* Ховер кнопки отправки */
+
 .contact__submit:hover {
     opacity: 0.9;
     transform: translateY(-1px);
 }
 
-/* Подвал с примечаниями */
+
 .contact__footnote {
     position: relative;
     z-index: 1;
@@ -300,10 +300,10 @@
 }
 
 .contact__footnote p {
-    margin: 0; /* убираем внешние отступы, чтобы gap было ровным */
+    margin: 0; 
 }
 
-/* Вспомогательный класс для скрытого текста */
+
 .visually-hidden {
     position: absolute;
     width: 1px;

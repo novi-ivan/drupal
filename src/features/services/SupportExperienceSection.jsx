@@ -16,7 +16,7 @@ export function SupportExperienceSection() {
             <div className="container">
                 <img src={druplicon} alt="" className="support-exp__bg-icon" />
 
-                {/* верх: Поддержка от Drupal-coder */}
+                
                 <div className="support-exp__top">
                     <h2 className="support-exp__title">
                         {renderWithLineBreaks(supportExperienceTitle)}
@@ -34,7 +34,7 @@ export function SupportExperienceSection() {
                     </div>
                 </div>
 
-                {/* низ: Экспертиза в Drupal, опыт 14 лет! */}
+                
                 <div className="support-exp__bottom">
                     <div className="support-exp__image-wrap">
                         <img src={analyticsImage} alt="" className="support-exp__image" />

@@ -1,11 +1,11 @@
-/* Общие UI-элементы */
+
 
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: 12px 24px;
-    border-radius: var(--radius-sm); /* небольшое скругление по умолчанию */
+    border-radius: var(--radius-sm); 
     border: 2px solid var(--color-accent);
     background: var(--color-accent);
     font-weight: 400;
@@ -19,7 +19,7 @@
     opacity: 0.9;
 }
 
-/* Обводочная кнопка */
+
 .btn--outline {
     background: transparent;
     color: var(--color-text);

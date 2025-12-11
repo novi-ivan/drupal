@@ -37,10 +37,12 @@ export function TariffsSection() {
                             </ul>
 
                             <button
+                                type="button"
                                 className={
                                     'btn tariff-card__btn' +
                                     (tariff.type === 'primary' ? ' tariff-card__btn--filled' : ' btn--outline')
                                 }
+                                onClick={() => { window.location.href = '/#contacts' }}
                             >
                                 {tariff.buttonText}
                             </button>
@@ -53,7 +55,7 @@ export function TariffsSection() {
                         Вам не подходят наши тарифы? Оставьте заявку и мы <br/>
                         предложим вам индивидуальные условия!
                     </p>
-                    <button className="tariffs__footer-link">
+                    <button className="tariffs__footer-link" onClick={() => { window.location.href = '/#contacts' }}>
                         получить индивидуальный тариф
                     </button>
                 </div>

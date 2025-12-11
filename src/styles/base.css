@@ -17,24 +17,24 @@
 }
 .container {
     width: 100%;
-    max-width: 1280px;      /* ширина контента, как в фигме */
+    max-width: 1280px;      
     margin: 0 auto;
-    padding-left: 40px;     /* отступ слева */
-    padding-right: 40px;    /* отступ справа */
+    padding-left: 40px;     
+    padding-right: 40px;    
     box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
     .container {
-        padding-left: 20px;  /* мобильные отступы */
+        padding-left: 20px;  
         padding-right: 20px;
     }
 }
 
 @media (min-width: 1440px) {
     .container {
-        max-width: 1320px;   /* чуть шире на больших экранах */
-        padding-left: 60px;  /* отступы как в макетах */
+        max-width: 1320px;   
+        padding-left: 60px;  
         padding-right: 60px;
     }
 }

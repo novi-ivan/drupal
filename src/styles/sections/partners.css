@@ -1,6 +1,6 @@
-/* PARTNERS */
 
-/* Секция партнёров */
+
+
 .partners {
     --partners-card-width: 291px;
     --partners-card-height: 155px;
@@ -11,7 +11,7 @@
     padding: 160px 0 80px;
 }
 
-/* Заголовок секции партнёров */
+
 .partners__title {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
@@ -23,7 +23,7 @@
     margin-bottom: 12px;
 }
 
-/* Подзаголовок секции партнёров */
+
 .partners__subtitle {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
@@ -36,34 +36,34 @@
     margin: 0 auto 42px;
 }
 
-/* Вьюпорт – окно, внутри которого «едут» лого */
+
 .partners__viewport {
     overflow: hidden;
     padding: 0 12px;
     display: flex;
     flex-direction: column;
-    gap: var(--partners-gap); /* вертикальный отступ = горизонтальному */
+    gap: var(--partners-gap); 
 }
 
-/* Одна строка с логотипами */
+
 .partners__row {
     display: flex;
-    flex-wrap: nowrap;           /* НИКОГДА не переносим на следующую строку */
+    flex-wrap: nowrap;           
     gap: var(--partners-gap);
     align-items: center;
     will-change: transform;
-    min-width: max-content;      /* ширина = сумма карточек + gap для плавности */
+    min-width: max-content;      
     transform: translate3d(0, 0, 0);
 }
 
-/* нижний ряд чуть сдвигаем, чтобы лого не совпадали по сетке */
+
 .partners__row--bottom {
     margin-top: 20px;
 }
 
-/* Карточка логотипа */
+
 .partners__card {
-    flex: 0 0 var(--partners-card-width);             /* фиксированная ширина, НЕ растягиваемся */
+    flex: 0 0 var(--partners-card-width);             
     height: var(--partners-card-height);
     display: flex;
     justify-content: center;
@@ -73,7 +73,7 @@
     background: var(--color-surface);
 }
 
-/* Изображение логотипа */
+
 .partners__logo {
     max-width: 170px;
     max-height: 80px;
@@ -82,7 +82,7 @@
     object-fit: contain;
 }
 
-/* бесконечный скролл */
+
 @keyframes partners-scroll {
     0% {
         transform: translate3d(0, 0, 0);
@@ -92,7 +92,7 @@
     }
 }
 
-/* Мобильная адаптация */
+
 @media (max-width: 768px) {
     .partners {
         padding: 60px 0 68px;

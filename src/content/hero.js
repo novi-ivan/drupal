@@ -8,6 +8,7 @@ export const heroActions = [
         id: 'hero-tariffs-btn',
         label: 'Тарифы',
         variant: 'outline',
+        href: '#tariffs',
     },
 ]
 

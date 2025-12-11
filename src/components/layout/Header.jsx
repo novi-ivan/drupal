@@ -16,18 +16,23 @@ export function Header({
         }
     }
 
+    const handleLogoClick = (e) => {
+        e.preventDefault()
+        window.location.reload()
+    }
+
     return (
         <header className="header">
             <div className="container header__inner">
 
-                {/* ЛОГО СЛЕВА */}
+                
                 <div className="header__left">
-                    <a href="#top" className="header__logo">
+                    <a href="/" className="header__logo" onClick={handleLogoClick}>
                         <img src={logo} alt="Drupal-coder" />
                     </a>
                 </div>
 
-                {/* МЕНЮ ПО ЦЕНТРУ (ДЕСКТОП) */}
+                
                 <nav className="header__nav header__nav--desktop">
                     {mainNavItems.map((item) => (
                         <a
@@ -44,7 +49,7 @@ export function Header({
                     ))}
                 </nav>
 
-                {/* ПРАВО: ТЕЛЕФОН + RU + БУРГЕР */}
+                
                 <div className="header__right">
                     <a href={contactPhoneHref} className="header__phone">
                         {contactPhone}

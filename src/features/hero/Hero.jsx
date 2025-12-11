@@ -32,13 +32,14 @@ export function Hero() {
 
                     <div className="hero__actions" id="hero-actions">
                         {heroActions.map((action) => (
-                            <button
+                            <a
                                 key={action.id}
+                                href={action.href || '#'}
                                 className={`btn ${action.variant === 'outline' ? 'btn--outline ' : ''}hero__btn-outline`}
                                 id={action.id}
                             >
                                 {action.label}
-                            </button>
+                            </a>
                         ))}
                     </div>
                 </div>

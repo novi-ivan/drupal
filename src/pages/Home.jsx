@@ -18,10 +18,10 @@ export function Home({ onBurgerClick, onContactClick }) {
             />
 
             <main>
-                {/* Hero с видео */}
+                
                 <Hero />
 
-                {/* НОВЫЙ БЛОК из фигмы: 13 лет совершенствуем компетенции */}
+                
                 <section id="support" className="section section--white">
                     <div className="container">
                         <SupportSection />
