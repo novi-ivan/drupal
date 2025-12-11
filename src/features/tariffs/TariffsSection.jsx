@@ -52,8 +52,15 @@ export function TariffsSection() {
 
                 <div className="tariffs__footer">
                     <p className="tariffs__footer-text">
-                        Вам не подходят наши тарифы? Оставьте заявку и мы <br/>
-                        предложим вам индивидуальные условия!
+                        <span className="tariffs__footer-line tariffs__footer-line--first">
+                            Вам не подходят наши тарифы?
+                        </span>
+                        <span className="tariffs__footer-line tariffs__footer-line--second">
+                            Оставьте заявку и мы
+                        </span>
+                        <span className="tariffs__footer-line tariffs__footer-line--third">
+                            предложим вам индивидуальные условия!
+                        </span>
                     </p>
                     <button className="tariffs__footer-link" onClick={() => { window.location.href = '/#contacts' }}>
                         получить индивидуальный тариф
