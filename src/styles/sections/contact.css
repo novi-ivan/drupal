@@ -9,6 +9,10 @@
         linear-gradient(125deg, #040613 0%, #05081a 55%, #050b21 100%);
     color: var(--color-surface);
     padding: 96px 0 104px;
+    max-width: 1440px;
+    width: 100%;
+    min-height: 816px;
+    margin: 0 auto;
 }
 
 /* Общий контейнер фоновых картинок */
@@ -63,16 +67,22 @@
 
 /* Заголовок секции контактов */
 .contact__title {
+    font-family: 'Montserrat', sans-serif;
     font-size: 42px;
+    font-style: normal;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: normal;
+    color: #fff;
 }
 
 /* Описание в секции контактов */
 .contact__text {
-    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
     line-height: 22px;
-    opacity: 0.7;
+    color: #fff;
 }
 
 /* Список ссылок (телефон/почта) */
@@ -95,14 +105,24 @@
 
 /* Телефонная ссылка (увеличенный шрифт) */
 .contact__link--phone {
-    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
 }
 
 /* Адрес email */
 .contact__mail {
-    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-style: normal;
     font-weight: 700;
-    text-decoration: underline;
+    line-height: 150%;
+    color: #fff;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
 }
 
 /* Иконка у ссылки */
@@ -136,9 +156,11 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: var(--radius-xs);
     color: var(--color-surface);
+    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
+    font-style: normal;
     font-weight: 500;
-    line-height: 1.2;
+    line-height: 16px;
 }
 
 /* Многострочное поле */
@@ -150,8 +172,13 @@
 /* Плейсхолдеры полей */
 .contact__field input::placeholder,
 .contact__field textarea::placeholder {
-    color: var(--color-surface);
+    color: #fff;
     opacity: 0.9;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
 }
 
 /* Чекбокс согласия */
@@ -190,8 +217,14 @@
 
 /* Текст согласия */
 .contact__checkbox-label {
-    opacity: 0.85;
-    line-height: 1.4;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #fff;
+    opacity: 1;
+    white-space: pre-line; /* сохраняем переносы из текста consentText */
 }
 
 /* Кнопка отправки формы */
@@ -202,10 +235,14 @@
     border: none;
     border-radius: var(--radius-xs);
     color: var(--color-surface);
+    font-family: 'Montserrat', sans-serif;
     font-size: 12px;
+    font-style: normal;
     font-weight: 500;
+    line-height: 12px;
+    letter-spacing: 0.72px;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    text-align: center;
     cursor: pointer;
     transition: opacity 0.2s ease, transform 0.2s ease;
 }
@@ -226,8 +263,13 @@
     display: flex;
     flex-direction: column;
     gap: 6px;
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.6);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #fff;
+    opacity: 0.5;
 }
 
 /* Вспомогательный класс для скрытого текста */
