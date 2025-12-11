@@ -216,11 +216,11 @@
     width: 25px;
     height: 25px;
     border-radius: var(--radius-xs);
-    border: none;
-    background: url('../../assets/img/check-box.svg') center/cover no-repeat;
+    border: 2px solid #9b9ca6;
+    background: transparent;
     display: grid;
     place-items: center;
-    transition: opacity 0.2s ease;
+    transition: border-color 0.2s ease, background 0.2s ease;
     pointer-events: none;
 }
 
@@ -233,7 +233,8 @@
 }
 
 .contact__checkbox input:checked + .contact__checkbox-box {
-    background: url('../../assets/img/check-box.svg') center/cover no-repeat;
+    border-color: #9b9ca6;
+    background: transparent;
 }
 
 .contact__checkbox input:checked + .contact__checkbox-box img {
