@@ -100,11 +100,17 @@
 /* hero__btn-outline: кнопка "Тарифы" */
 .hero__btn-outline {
     padding: 20px 90px;
-    font-size: 17px;
-    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 12px; /* 100% */
+    letter-spacing: 0.72px;
+    text-transform: uppercase;
     border-radius: var(--radius-sm);
     border-width: 2.5px;
-    letter-spacing: 0.02em;
     margin-bottom: 154px;
 }
 
