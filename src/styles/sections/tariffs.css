@@ -171,7 +171,7 @@ transform: scale(1.07);
     width: 13px;
     height: 10px;
     flex-shrink: 0;
-    background: url('/src/assets/img/check.svg') center/contain no-repeat;
+    background: url('../../assets/img/orange-check.svg') center/contain no-repeat;
     margin-top: 4px;
     border: none;
 }
