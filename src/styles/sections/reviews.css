@@ -206,6 +206,7 @@
     .reviews__card-stack {
         max-width: 100%;
         height: auto;
+        margin-top: 28px;
     }
 
     .reviews__card--ghost,
@@ -213,22 +214,39 @@
         display: none;
     }
 
+    .reviews__card {
+        position: relative;
+        left: 0;
+        transform: none;
+        width: 100%;
+    }
+
     .reviews__card--main {
         position: relative;
         top: 0;
         height: auto;
+        width: 100%;
+        max-width: 100%;
+        display: flex;
         flex-direction: column;
         align-items: flex-start;
+        gap: 28px;
         padding: 40px 32px;
+    }
+
+    .reviews__content {
+        gap: 24px;
     }
 
     .reviews__divider {
         width: 100%;
         height: 1px;
+        margin: 8px 0 4px;
     }
 
     .reviews__controls {
         align-self: flex-end;
+        gap: 24px;
     }
 }
 
@@ -243,16 +261,34 @@
     }
 
     .reviews__card--main {
-        padding: 32px 24px;
-        gap: 24px;
+        padding: 28px 20px;
+        gap: 20px;
     }
 
     .reviews__logo {
         width: 140px;
     }
 
+    .reviews__headline {
+        font-size: 20px;
+    }
+
+    .reviews__author {
+        font-size: 13px;
+    }
+
+    .reviews__arrow {
+        width: 32px;
+        height: 32px;
+    }
+
+    .reviews__counter {
+        font-size: 22px;
+    }
+
     .reviews__controls {
         width: 100%;
-        justify-content: flex-end;
+        justify-content: flex-start;
+        gap: 16px;
     }
 }

@@ -107,3 +107,26 @@
         margin-bottom: 20px;
     }
 }
+
+@media (max-width: 640px) {
+    .partners {
+        --partners-card-width: 220px;
+        --partners-card-height: 120px;
+        --partners-gap: 16px;
+        padding: 52px 0 56px;
+    }
+
+    .partners__title {
+        font-size: 32px;
+    }
+
+    .partners__subtitle {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 16px;
+    }
+
+    .partners__viewport {
+        padding: 0 4px;
+    }
+}

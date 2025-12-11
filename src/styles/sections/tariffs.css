@@ -275,3 +275,91 @@ transform: scale(1.07);
     margin-top: 26px;
     display: inline-block;
 }
+
+@media (max-width: 1023.98px) {
+    .tariffs {
+        padding-top: 80px;
+        padding-bottom: 64px;
+    }
+
+    .tariffs__title {
+        font-size: 34px;
+        margin-bottom: 32px;
+    }
+}
+
+@media (max-width: 960px) {
+    .tariffs__cards {
+        gap: 24px;
+        margin-top: 32px;
+        margin-bottom: 56px;
+        justify-items: stretch;
+    }
+
+    .tariff-card {
+        max-width: 100%;
+    }
+
+    .tariff-card--primary {
+        transform: none;
+        box-shadow: var(--shadow-card);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .tariff-card {
+        padding: 22px 20px 28px;
+    }
+
+    .tariff-card__header {
+        padding-left: 0;
+    }
+
+    .tariff-card__name {
+        font-size: 20px;
+        margin-top: 18px;
+    }
+
+    .tariff-card__price {
+        gap: 4px;
+    }
+
+    .tariff-card__price-value {
+        font-size: 48px;
+        line-height: 1;
+    }
+
+    .tariff-card__price-currency {
+        font-size: 22px;
+        line-height: 1;
+    }
+
+    .tariff-card__note {
+        font-size: 14px;
+    }
+
+    .tariff-card__list {
+        padding: 16px 0 8px;
+        gap: 14px;
+    }
+
+    .tariff-card__list::before {
+        margin: 0 0 28px;
+    }
+
+    .tariff-card__item {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .tariff-card__btn {
+        width: 100%;
+        max-width: 100%;
+        margin: 30px 0 0;
+    }
+
+    .tariffs__footer-text {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
