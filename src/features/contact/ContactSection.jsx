@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import contactBgTop from '../../assets/img/D-flying.svg'
 import contactBgBottom from '../../assets/img/D-flying-bottom.svg'
 import contactIconPhone from '../../assets/img/contact-icon-phone.svg'
@@ -12,9 +12,61 @@ import {
     consentText,
 } from '../../content/contact'
 
+const FORMCARRY_URL = 'https://formcarry.com/s/tHO8EjUKU6g'
+
+const isValidPhone = (v) => /^\+?[0-9\s\-()]{7,}$/.test(v)
+const isValidEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)
+
 export function ContactSection() {
-    const handleSubmit = (event) => {
-        event.preventDefault()
+    const [errors, setErrors] = useState({ name: '', phone: '', email: '', consent: '' })
+    const [status, setStatus] = useState('idle')
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+
+        const form = e.currentTarget
+        const fd = new FormData(form)
+
+        const name = String(fd.get('name') || '').trim()
+        const phone = String(fd.get('phone') || '').trim()
+        const email = String(fd.get('email') || '').trim()
+        const comment = String(fd.get('comment') || '').trim()
+        const consent = fd.get('consent') === 'on'
+
+        const nextErrors = { name: '', phone: '', email: '', consent: '' }
+
+        if (!name) nextErrors.name = 'Введите имя'
+        if (!isValidPhone(phone)) nextErrors.phone = 'Введите корректный телефон'
+        if (!isValidEmail(email)) nextErrors.email = 'Введите корректный e-mail'
+        if (!consent) nextErrors.consent = 'Нужно согласие'
+
+        setErrors(nextErrors)
+
+        if (nextErrors.name || nextErrors.phone || nextErrors.email || nextErrors.consent) {
+            setStatus('error')
+            return
+        }
+
+        setStatus('loading')
+
+        try {
+            const res = await fetch(FORMCARRY_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json',
+                },
+                body: JSON.stringify({ name, phone, email, comment }),
+            })
+
+            if (!res.ok) throw new Error()
+
+            setStatus('success')
+            setErrors({ name: '', phone: '', email: '', consent: '' })
+            form.reset()
+        } catch {
+            setStatus('error')
+        }
     }
 
     return (
@@ -48,37 +100,40 @@ export function ContactSection() {
                     </div>
                 </div>
 
-                <form className="contact__form" onSubmit={handleSubmit}>
-                    <label className="contact__field">
-                        <span className="visually-hidden">Ваше имя</span>
+                <form className="contact__form" onSubmit={handleSubmit} noValidate>
+                    <label className={`contact__field ${errors.name ? 'contact__field--error' : ''}`}>
                         <input type="text" name="name" placeholder="Ваше имя" />
                     </label>
-                    <label className="contact__field">
-                        <span className="visually-hidden">Телефон</span>
+                    {errors.name && <p className="contact__error">{errors.name}</p>}
+
+                    <label className={`contact__field ${errors.phone ? 'contact__field--error' : ''}`}>
                         <input type="tel" name="phone" placeholder="Телефон" />
                     </label>
-                    <label className="contact__field">
-                        <span className="visually-hidden">E-mail</span>
+                    {errors.phone && <p className="contact__error">{errors.phone}</p>}
+
+                    <label className={`contact__field ${errors.email ? 'contact__field--error' : ''}`}>
                         <input type="email" name="email" placeholder="E-mail" />
                     </label>
+                    {errors.email && <p className="contact__error">{errors.email}</p>}
+
                     <label className="contact__field contact__field--textarea">
-                        <span className="visually-hidden">Ваш комментарий</span>
                         <textarea name="comment" rows="3" placeholder="Ваш комментарий" />
                     </label>
 
-                    <label className="contact__checkbox">
-                        <input type="checkbox" defaultChecked />
+                    <label className={`contact__checkbox ${errors.consent ? 'contact__checkbox--error' : ''}`}>
+                        <input type="checkbox" name="consent" defaultChecked />
                         <span className="contact__checkbox-box">
                             <img src={checkIcon} alt="" />
                         </span>
-                        <span className="contact__checkbox-label">
-                            {consentText}
-                        </span>
+                        <span className="contact__checkbox-label">{consentText}</span>
                     </label>
+                    {errors.consent && <p className="contact__error">{errors.consent}</p>}
 
-                    <button type="submit" className="contact__submit">
-                        Оставить заявку!
+                    <button type="submit" className="contact__submit" disabled={status === 'loading'}>
+                        {status === 'loading' ? 'Отправка…' : 'Оставить заявку!'}
                     </button>
+
+                    {status === 'success' && <p className="contact__success">Заявка отправлена</p>}
                 </form>
             </div>
 

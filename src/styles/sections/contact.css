@@ -1,17 +1,13 @@
-
-
-
 .contact {
     position: relative;
     overflow: hidden;
     background:
-        radial-gradient(140% 120% at 24% 8%, rgba(255, 255, 255, 0.08), transparent 62%),
-        linear-gradient(125deg, #040613 0%, #05081a 55%, #050b21 100%);
+            radial-gradient(140% 120% at 24% 8%, rgba(255, 255, 255, 0.08), transparent 62%),
+            linear-gradient(125deg, #040613 0%, #05081a 55%, #050b21 100%);
     color: var(--color-surface);
     padding: 96px 0 54px;
     min-height: 699px;
 }
-
 
 .contact__bg {
     position: absolute;
@@ -19,13 +15,11 @@
     z-index: 0;
 }
 
-
 .contact__bg img {
     display: block;
     width: 100%;
     height: auto;
 }
-
 
 .contact__bg--top {
     right: 605px;
@@ -35,7 +29,6 @@
     opacity: 1;
 }
 
-
 .contact__bg--bottom {
     right: 0px;
     bottom: 0px;
@@ -43,7 +36,6 @@
     transform: rotate(0deg);
     opacity: 1;
 }
-
 
 .contact__inner {
     position: relative;
@@ -54,14 +46,12 @@
     align-items: flex-start;
 }
 
-
 .contact__info {
     display: flex;
     flex-direction: column;
     gap: 24px;
     max-width: 520px;
 }
-
 
 .contact__title {
     font-family: 'Montserrat', sans-serif;
@@ -72,7 +62,6 @@
     color: #fff;
     margin: 0 0 19px;
 }
-
 
 .contact__text {
     font-family: 'Montserrat', sans-serif;
@@ -85,15 +74,13 @@
     opacity: 0.7;
 }
 
-
 .contact__links {
     display: flex;
     flex-direction: column;
     gap: 5px;
     margin-top: 24px;
-    align-items: flex-start; 
+    align-items: flex-start;
 }
-
 
 .contact__link {
     display: inline-flex;
@@ -104,7 +91,6 @@
     font-weight: 700;
 }
 
-
 .contact__link--phone {
     font-family: 'Montserrat', sans-serif;
     font-size: 32px;
@@ -112,7 +98,6 @@
     font-weight: 700;
     line-height: 150%;
 }
-
 
 .contact__mail {
     font-family: 'Montserrat', sans-serif;
@@ -126,13 +111,11 @@
     text-decoration-skip-ink: none;
 }
 
-
 .contact__icon {
     width: 24px;
     height: 24px;
     opacity: 0.5;
 }
-
 
 .contact__form {
     display: grid;
@@ -144,11 +127,9 @@
     margin-top: 24px;
 }
 
-
 .contact__field {
     display: block;
 }
-
 
 .contact__field input,
 .contact__field textarea {
@@ -168,13 +149,11 @@
     line-height: 16px;
 }
 
-
 .contact__field textarea {
     min-height: 111px;
     resize: none;
     padding-top: 26px;
 }
-
 
 .contact__field input::placeholder,
 .contact__field textarea::placeholder {
@@ -187,7 +166,6 @@
     line-height: 16px;
 }
 
-
 .contact__checkbox {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -199,11 +177,10 @@
     color: var(--color-surface);
 }
 
-
 .contact__checkbox input {
     position: absolute;
     opacity: 0;
-    pointer-events: auto; 
+    pointer-events: auto;
     width: 25px;
     height: 25px;
     left: 0;
@@ -212,7 +189,6 @@
     margin: 0;
     z-index: 2;
 }
-
 
 .contact__checkbox-box {
     width: 25px;
@@ -225,7 +201,6 @@
     transition: border-color 0.2s ease, background 0.2s ease;
     pointer-events: none;
 }
-
 
 .contact__checkbox-box img {
     width: 14px;
@@ -243,7 +218,6 @@
     opacity: 1;
 }
 
-
 .contact__checkbox-label {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
@@ -252,9 +226,8 @@
     line-height: normal;
     color: #fff;
     opacity: 1;
-    white-space: pre-line; 
+    white-space: pre-line;
 }
-
 
 .contact__submit {
     width: 100%;
@@ -276,12 +249,10 @@
     transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-
 .contact__submit:hover {
     opacity: 0.9;
     transform: translateY(-1px);
 }
-
 
 .contact__footnote {
     position: relative;
@@ -303,7 +274,7 @@
 }
 
 .contact__footnote p {
-    margin: 0; 
+    margin: 0;
 }
 
 .contact__footnote::before {
@@ -315,7 +286,6 @@
     width: 100vw;
     border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
-
 
 .visually-hidden {
     position: absolute;
@@ -427,4 +397,39 @@
         font-size: 12px;
         gap: 4px;
     }
+}
+
+.contact__field--error input,
+.contact__field--error textarea {
+    border-color: #f14d34;
+    box-shadow: 0 0 0 2px rgba(241, 77, 52, 0.25);
+}
+
+.contact__checkbox--error .contact__checkbox-box {
+    border-color: #f14d34;
+    box-shadow: 0 0 0 2px rgba(241, 77, 52, 0.25);
+}
+
+.contact__error {
+    max-width: 456px;
+    margin: 6px 0 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    color: #f14d34;
+}
+
+.contact__success {
+    max-width: 456px;
+    margin: 10px 0 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.contact__submit:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
 }
