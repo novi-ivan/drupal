@@ -1,14 +1,14 @@
 import React from 'react'
 import { Header } from '../components/layout/Header'
-import { Hero } from '../features/hero/Hero'
-import { SupportSection } from '../features/support/SupportSection'
-import { SupportExperienceSection } from '../features/services/SupportExperienceSection'
-import { TariffsSection } from '../features/tariffs/TariffsSection'
-import { CasesSection } from '../features/cases/CasesSection'
-import { TeamSection } from '../features/team/TeamSection'
-import { ReviewsSection } from '../features/reviews/ReviewsSection'
-import { PartnersSection } from '../features/partners/PartnersSection'
-import { ContactSection } from '../features/contact/ContactSection'
+import { Hero } from '../sections/hero/Hero'
+import { SupportSection } from '../sections/support/SupportSection'
+import { SupportExperienceSection } from '../sections/support-experience/SupportExperienceSection'
+import { TariffsSection } from '../sections/tariffs/TariffsSection'
+import { CasesSection } from '../sections/cases/CasesSection'
+import { TeamSection } from '../sections/team/TeamSection'
+import { ReviewsSection } from '../sections/reviews/ReviewsSection'
+import { PartnersSection } from '../sections/partners/PartnersSection'
+import { ContactSection } from '../sections/contact/ContactSection'
 export function Home({ onBurgerClick, onContactClick }) {
     return (
         <>

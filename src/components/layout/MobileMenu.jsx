@@ -1,5 +1,5 @@
 import React from 'react'
-import { mobileNavItems } from '../../content/navigation'
+import { mobileNavItems } from '../../data/navigation'
 
 export function MobileMenu({ isOpen, onClose, onContactClick }) {
     return (
@@ -34,7 +34,7 @@ export function MobileMenu({ isOpen, onClose, onContactClick }) {
                     className="btn mobile-menu__contact-btn"
                     onClick={onContactClick}
                 >
-                    Связаться
+                    Связь с нами
                 </button>
             </div>
         </div>

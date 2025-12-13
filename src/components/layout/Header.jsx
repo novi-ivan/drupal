@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from '../../assets/img/drupal-coder.svg'
-import { contactPhone, contactPhoneHref } from '../../content/contact'
-import { languageLabel, mainNavItems } from '../../content/navigation'
+import { contactPhone, contactPhoneHref } from '../../data/contact'
+import { languageLabel, mainNavItems } from '../../data/navigation'
 
 export function Header({
                            activeSection = 'support',

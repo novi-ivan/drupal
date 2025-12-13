@@ -258,7 +258,9 @@
 
 .mobile-menu__contact-btn {
     width: 100%;
-    display: none !important;
+    display: inline-flex;
+    margin-top: 10px;
+    padding: 14px 18px;
 }
 
 

@@ -6,7 +6,6 @@
             linear-gradient(125deg, #040613 0%, #05081a 55%, #050b21 100%);
     color: var(--color-surface);
     padding: 96px 0 54px;
-    min-height: 699px;
 }
 
 .contact__bg {
