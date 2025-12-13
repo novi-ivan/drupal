@@ -369,6 +369,7 @@
     .contact__bg--bottom {
         width: 380px;
         left: 20%;
+        right: auto;
         bottom: -120px;
     }
 
