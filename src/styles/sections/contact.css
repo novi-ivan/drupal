@@ -1,6 +1,9 @@
 .contact {
     position: relative;
     overflow: hidden;
+    --container-max: 1280px;
+    --container-pad: 40px;
+    --container-side: calc(max(0px, (100vw - var(--container-max)) / 2) + var(--container-pad));
     background:
             radial-gradient(140% 120% at 24% 8%, rgba(255, 255, 255, 0.08), transparent 62%),
             linear-gradient(125deg, #040613 0%, #05081a 55%, #050b21 100%);
@@ -21,7 +24,7 @@
 }
 
 .contact__bg--top {
-    right: 605px;
+    right: calc(var(--container-side) + 485px);
     top: 0px;
     width: 275px;
     transform: rotate(0deg);
@@ -34,6 +37,13 @@
     width: 462px;
     transform: rotate(0deg);
     opacity: 1;
+}
+
+@media (min-width: 1440px) {
+    .contact {
+        --container-max: 1320px;
+        --container-pad: 60px;
+    }
 }
 
 .contact__inner {
@@ -321,6 +331,7 @@
 
 @media (max-width: 640px) {
     .contact {
+        --container-pad: 20px;
         padding: 56px 0 64px;
     }
 
@@ -352,7 +363,7 @@
 
     .contact__bg--top {
         width: 260px;
-        right: -120px;
+        right: calc(var(--container-side) - 120px);
     }
 
     .contact__bg--bottom {
