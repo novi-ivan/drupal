@@ -4,7 +4,9 @@ import druplicon from '/src/assets/img/druplicon.svg'
 import { HeroStats } from './HeroStats'
 import { heroActions, heroCopy } from '../../data/hero'
 import { renderWithLineBreaks } from '../../utils/text'
+import { useTranslation } from 'react-i18next'
 export function Hero() {
+    const { t } = useTranslation()
     return (
 
         <section className="hero" id="hero">
@@ -21,13 +23,13 @@ export function Hero() {
                 <div className="hero__overlay" />
             </div>
 
-            <div className="container hero__content">
+                <div className="container hero__content">
                 <div className="hero__text" id="hero-text">
                     <h1 className="hero__title" id="hero-title">
-                        {renderWithLineBreaks(heroCopy.title)}
+                        {renderWithLineBreaks(t(heroCopy.titleKey))}
                     </h1>
                     <p className="hero__subtitle" id="hero-subtitle">
-                        {renderWithLineBreaks(heroCopy.subtitle)}
+                        {renderWithLineBreaks(t(heroCopy.subtitleKey))}
                     </p>
 
                     <div className="hero__actions" id="hero-actions">
@@ -38,7 +40,7 @@ export function Hero() {
                                 className={`btn ${action.variant === 'outline' ? 'btn--outline ' : ''}hero__btn-outline`}
                                 id={action.id}
                             >
-                                {action.label}
+                                {t(action.labelKey)}
                             </a>
                         ))}
                     </div>

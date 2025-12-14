@@ -12,44 +12,44 @@ export const supportItems = [
     {
         icon: competency1,
         bg: iconBg,
-        text: 'Добавление\n информации на сайт,\n создание новых\n разделов',
+        textKey: 'support.items.i1',
     },
     {
         icon: competency2,
         bg: iconBg,
-        text: 'Разработка\n и оптимизация\n модулей сайта',
+        textKey: 'support.items.i2',
     },
     {
         icon: competency3,
         bg: iconBg,
-        text: 'Интеграция с CRM,\n 1С, платежными\n системами, любыми веб-сервисами',
+        textKey: 'support.items.i3',
     },
     {
         icon: competency4,
         bg: iconBg,
-        text: 'Любые доработки\n функционала\n и дизайна',
+        textKey: 'support.items.i4',
     },
     {
         icon: competency5,
         bg: iconBg,
-        text: 'Аудит и мониторинг\n безопасности Drupal\n сайтов',
+        textKey: 'support.items.i5',
     },
     {
         icon: competency6,
         bg: iconBg,
-        text: 'Миграция, импорт\n контента и апгрейд\n Drupal',
+        textKey: 'support.items.i6',
     },
     {
         icon: competency7,
         bg: iconBg,
-        text: 'Оптимизация\n и ускорение\n Drupal-сайтов',
+        textKey: 'support.items.i7',
     },
     {
         icon: competency8,
         bg: iconBg,
-        text: 'Веб-маркетинг,\n консультации\n и работы по SEO',
+        textKey: 'support.items.i8',
     },
 ]
 
-export const supportTitle = '13 лет совершенствуем\nкомпетенции в Drupal\n поддержке!'
-export const supportSubtitle = 'Разрабатываем и оптимизируем модули, расширяем функциональность сайтов, обновляем дизайн'
+export const supportTitleKey = 'support.title'
+export const supportSubtitleKey = 'support.subtitle'

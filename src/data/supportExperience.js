@@ -6,66 +6,68 @@ import cardBg5 from '../assets/img/support5.svg'
 import cardBg6 from '../assets/img/support6.svg'
 import cardBg7 from '../assets/img/support7.svg'
 import cardBg8 from '../assets/img/support8.svg'
-import analyticsImg from '../assets/img/laptop.png'
+import analyticsImgRu from '../assets/img/laptop.png'
+import analyticsImgEn from '../assets/img/laptop-en.png'
 
 export const supportExperienceCards = [
     {
         num: '01.',
-        title: 'Постановка задач по Email',
-        text: 'Удобная и привычная\nмодель постановки задач,\nпри которой задачи\nфиксируются и никогда\nне теряются.',
+        titleKey: 'supportExperience.cards.c1.title',
+        textKey: 'supportExperience.cards.c1.text',
         bg: cardBg1,
     },
     {
         num: '02.',
-        title: 'Система Helpdesk –\nотчетность,\nпрозрачность',
-        text: 'Возможность посмотреть\nвсе заявки в работе\nи отработанные часы\nв личном кабинете через\nбраузер.',
+        titleKey: 'supportExperience.cards.c2.title',
+        textKey: 'supportExperience.cards.c2.text',
         bg: cardBg2,
     },
     {
         num: '03.',
-        title: 'Расширенная\nтехническая\nподдержка',
-        text: 'Возможность организации\nрасширенной\n техподдержки с 6:00\n до 22:00 без выходных.',
+        titleKey: 'supportExperience.cards.c3.title',
+        textKey: 'supportExperience.cards.c3.text',
         bg: cardBg3,
     },
     {
         num: '04.',
-        title: 'Персональный\nменеджер проекта',
-        text: 'Ваш менеджер проекта\nвсегда в курсе текущего\nсостояния проекта\n и в любой момент готов\nответить на любые\nвопросы.',
+        titleKey: 'supportExperience.cards.c4.title',
+        textKey: 'supportExperience.cards.c4.text',
         bg: cardBg4,
     },
     {
         num: '05.',
-        title: 'Удобные способы оплаты',
-        text: 'Безналичный расчет по\nдоговору или\nэлектронные деньги:\nWebMoney, Яндекс.Деньги,\nPaypal.',
+        titleKey: 'supportExperience.cards.c5.title',
+        textKey: 'supportExperience.cards.c5.text',
         bg: cardBg5,
     },
     {
         num: '06.',
-        title: 'Работаем с SLA\nи NDA',
-        text: 'Работа в рамках\nсоглашений\n о конфиденциальности\n и об уровне качества\n работ.',
+        titleKey: 'supportExperience.cards.c6.title',
+        textKey: 'supportExperience.cards.c6.text',
         bg: cardBg6,
     },
     {
         num: '07.',
-        title: 'Штатные\nспециалисты',
-        text: 'Надёжные штатные\nспециалисты, никаких\nфрилансеров.',
+        titleKey: 'supportExperience.cards.c7.title',
+        textKey: 'supportExperience.cards.c7.text',
         bg: cardBg7,
     },
     {
         num: '08.',
-        title: 'Удобные каналы\n связи',
-        text: 'Консультации по\nтелефону, скайпу,\nв мессенджерах.',
+        titleKey: 'supportExperience.cards.c8.title',
+        textKey: 'supportExperience.cards.c8.text',
         bg: cardBg8,
     },
 ];
 
-export const supportExperienceTitle = 'Поддержка\nот Drupal-coder'
+export const supportExperienceTitleKey = 'supportExperience.title'
 
-export const expertiseTitle = 'Экспертиза в Drupal,\nопыт 14 лет!'
+export const expertiseTitleKey = 'supportExperience.expertiseTitle'
 
 export const expertisePoints = [
-    'Только системный подход — контроль версий, резервирование и тестирование!',
-    'Только Drupal сайты,\n не берём на поддержку\n сайты на других CMS!',
+    'supportExperience.expertisePoints.p1',
+    'supportExperience.expertisePoints.p2',
 ]
 
-export const analyticsImage = analyticsImg
+export const analyticsImageRu = analyticsImgRu
+export const analyticsImageEn = analyticsImgEn

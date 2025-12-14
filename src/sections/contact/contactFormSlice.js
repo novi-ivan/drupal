@@ -8,12 +8,13 @@ const isValidEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value)
 function validate(values) {
     const errors = { name: '', phone: '', email: '', consent: '' }
 
-    if (!String(values.name || '').trim()) errors.name = 'Введите имя'
+    if (!String(values.name || '').trim())
+        errors.name = 'contact.form.errors.nameRequired'
     if (!isValidPhone(String(values.phone || '').trim()))
-        errors.phone = 'Введите корректный телефон'
+        errors.phone = 'contact.form.errors.phoneInvalid'
     if (!isValidEmail(String(values.email || '').trim()))
-        errors.email = 'Введите корректный e-mail'
-    if (!values.consent) errors.consent = 'Нужно согласие'
+        errors.email = 'contact.form.errors.emailInvalid'
+    if (!values.consent) errors.consent = 'contact.form.errors.consentRequired'
 
     return errors
 }
@@ -60,7 +61,7 @@ export const submitContactForm = createAsyncThunk(
         } catch {
             return rejectWithValue({
                 kind: 'network',
-                message: 'Ошибка отправки. Пожалуйста, попробуйте ещё раз.',
+                messageKey: 'contact.form.errors.submitFailed',
             })
         }
     },
@@ -76,7 +77,7 @@ export const contactFormInitialState = {
     },
     errors: { name: '', phone: '', email: '', consent: '' },
     status: 'idle', // idle | loading | success | error | invalid
-    submitErrorMessage: '',
+    submitErrorMessageKey: '',
 }
 
 const contactFormSlice = createSlice({
@@ -96,33 +97,32 @@ const contactFormSlice = createSlice({
         },
         clearSubmitState(state) {
             state.status = 'idle'
-            state.submitErrorMessage = ''
+            state.submitErrorMessageKey = ''
         },
     },
     extraReducers: (builder) => {
         builder
             .addCase(submitContactForm.pending, (state) => {
                 state.status = 'loading'
-                state.submitErrorMessage = ''
+                state.submitErrorMessageKey = ''
             })
             .addCase(submitContactForm.fulfilled, (state) => {
                 state.status = 'success'
                 state.errors = { name: '', phone: '', email: '', consent: '' }
-                state.submitErrorMessage = ''
+                state.submitErrorMessageKey = ''
             })
             .addCase(submitContactForm.rejected, (state, action) => {
                 const payload = action.payload
                 if (payload?.kind === 'validation') {
                     state.status = 'invalid'
                     state.errors = payload.errors
-                    state.submitErrorMessage = ''
+                    state.submitErrorMessageKey = ''
                     return
                 }
 
                 state.status = 'error'
-                state.submitErrorMessage =
-                    payload?.message ||
-                    'Ошибка отправки. Пожалуйста, попробуйте ещё раз.'
+                state.submitErrorMessageKey =
+                    payload?.messageKey || 'contact.form.errors.submitFailed'
             })
     },
 })

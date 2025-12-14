@@ -1,7 +1,10 @@
 import React, { useEffect, useRef } from 'react'
 import { partners } from '../../data/partners'
+import { useTranslation } from 'react-i18next'
+import { renderWithLineBreaks } from '../../utils/text'
 
 export function PartnersSection() {
+    const { t } = useTranslation()
     // удваиваем список, чтобы анимация была бесшовной
     const marqueePartners = [...partners, ...partners]
     const row1Ref = useRef(null)
@@ -55,10 +58,9 @@ export function PartnersSection() {
     return (
         <section id="partners" className="partners">
             <div className="container">
-                <h2 className="partners__title">С нами работают</h2>
+                <h2 className="partners__title">{t('partners.title')}</h2>
                 <p className="partners__subtitle">
-                    Десятки компаний доверяют нам самое ценное, что у них есть в интернете – свои <br />
-                    сайты. Мы делаем всё, чтобы наше сотрудничество было долгим.
+                    {renderWithLineBreaks(t('partners.subtitle'))}
                 </p>
 
                 <div className="partners__viewport">

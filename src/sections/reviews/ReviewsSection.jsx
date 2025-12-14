@@ -1,8 +1,10 @@
 import React, { useMemo, useState } from 'react'
 import reviewBgShape from '../../assets/img/review-quote-bg.svg'
 import { reviews } from '../../data/reviews'
+import { useTranslation } from 'react-i18next'
 
 export function ReviewsSection() {
+    const { t } = useTranslation()
     const [current, setCurrent] = useState(0)
     const total = reviews.length
 
@@ -16,7 +18,7 @@ export function ReviewsSection() {
     return (
         <section id="reviews" className="reviews">
             <div className="container">
-                <h2 className="reviews__title">Отзывы</h2>
+                <h2 className="reviews__title">{t('reviews.title')}</h2>
 
                 <div className="reviews__wrap">
                     <div className="reviews__bg-shape" aria-hidden="true">
@@ -36,11 +38,11 @@ export function ReviewsSection() {
                                 />
 
                                 <p className="reviews__headline">
-                                    {review.headline}
+                                    {t(review.headlineKey)}
                                 </p>
 
                                 <p className="reviews__author">
-                                    {review.author}
+                                    {t(review.authorKey)}
                                 </p>
                             </div>
 
@@ -50,7 +52,7 @@ export function ReviewsSection() {
                                 <button
                                     type="button"
                                     className="reviews__arrow reviews__arrow--prev"
-                                    aria-label="Предыдущий отзыв"
+                                    aria-label={t('reviews.ariaPrev')}
                                     onClick={prev}
                                 >
                                     <svg
@@ -76,7 +78,7 @@ export function ReviewsSection() {
                                 <button
                                     type="button"
                                     className="reviews__arrow reviews__arrow--next"
-                                    aria-label="Следующий отзыв"
+                                    aria-label={t('reviews.ariaNext')}
                                     onClick={next}
                                 >
                                     <svg

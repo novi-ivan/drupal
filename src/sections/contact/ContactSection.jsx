@@ -10,8 +10,11 @@ import {
     contactPhoneHref,
 } from '../../data/contact'
 import { ContactForm } from './ContactForm'
+import { useTranslation } from 'react-i18next'
+import { renderWithLineBreaks } from '../../utils/text'
 
 export function ContactSection() {
+    const { t } = useTranslation()
     return (
         <section id="contacts" className="contact">
             <div className="contact__bg contact__bg--top">
@@ -23,12 +26,8 @@ export function ContactSection() {
 
             <div className="container contact__inner">
                 <div className="contact__info">
-                    <h2 className="contact__title">Оставить заявку на поддержку сайта</h2>
-                    <p className="contact__text">
-                        Срочно нужна поддержка сайта? Ваша команда не успевает справиться
-                        самостоятельно или предыдущий подрядчик не справился с работой?
-                        Тогда вам точно к нам! Просто оставьте заявку и наш менеджер с вами свяжется!
-                    </p>
+                    <h2 className="contact__title">{t('contact.title')}</h2>
+                    <p className="contact__text">{renderWithLineBreaks(t('contact.text'))}</p>
 
                     <div className="contact__links">
                         <a className="contact__link contact__link--phone" href={contactPhoneHref}>
@@ -43,12 +42,12 @@ export function ContactSection() {
                     </div>
                 </div>
 
-                <ContactForm submitLabel="Оставить заявку!" />
+                <ContactForm submitLabelKey="contact.form.submit" />
             </div>
 
             <div className="contact__footnote container">
-                <p>Проект ООО «Инитлаб», Краснодар, Россия.</p>
-                <p>Drupal является зарегистрированной торговой маркой Dries Buytaert.</p>
+                <p>{t('contact.footnote.line1')}</p>
+                <p>{t('contact.footnote.line2')}</p>
             </div>
         </section>
     )

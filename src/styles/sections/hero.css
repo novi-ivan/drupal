@@ -297,11 +297,13 @@
     }
 
     .hero__btn-outline {
-        width: 300px;
-        padding: 14px 18px;
+        width: auto;
+        min-width: 220px;
+        max-width: 100%;
+        padding: 14px 34px;
         margin-bottom: 28px;
         font-size: 13px;
-        min-height: 48px;
+        min-height: 30px;
         align-self: flex-start;
     }
 

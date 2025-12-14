@@ -87,6 +87,53 @@
     cursor: pointer;
 }
 
+.header__lang-wrap {
+    position: relative;
+}
+
+.header__lang-menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    left: auto;
+    transform: none;
+    display: grid;
+    gap: 6px;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    z-index: 50;
+    min-width: auto;
+}
+
+.header__lang-item {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+    color: var(--color-accent);
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 6px 0;
+    cursor: pointer;
+    text-align: left;
+    outline: none;
+}
+
+.header__lang-item:focus,
+.header__lang-item:focus-visible {
+    outline: none;
+    box-shadow: none;
+}
+
+.header__lang-item:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
 .header__lang-text {
     color: var(--color-surface);
 }
@@ -261,6 +308,51 @@
     display: inline-flex;
     margin-top: 10px;
     padding: 14px 18px;
+}
+
+.mobile-menu__lang {
+    display: grid;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.mobile-menu__lang-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.mobile-menu__lang-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.mobile-menu__lang-btn {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 14px;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: var(--radius-xs);
+    padding: 10px 12px;
+    cursor: pointer;
+}
+
+.mobile-menu__lang-btn--active {
+    background: rgba(255, 106, 58, 0.18);
+    border-color: rgba(255, 106, 58, 0.75);
+}
+
+.mobile-menu__lang-btn:focus,
+.mobile-menu__lang-btn:focus-visible {
+    outline: none;
+    box-shadow: none;
 }
 
 
