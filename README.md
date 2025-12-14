@@ -9,6 +9,7 @@ React + Vite проект для учебного задания: адаптив
 - Мобильное меню (бургер) + плавное открытие/закрытие (CSS transition)
 - Слайдер отзывов (переключение по кнопкам)
 - Контактная форма без перезагрузки страницы (fetch → Formcarry)
+- Переключение языка RU/EN (i18next + react-i18next), сохранение выбора в `LocalStorage`
 - Попап контактной формы на маршруте `/contact`:
   - открытие/закрытие через `requestAnimationFrame`
   - блокировка кнопки во время отправки + обработка ошибки
@@ -20,6 +21,7 @@ React + Vite проект для учебного задания: адаптив
 - React + Vite
 - React Router (`react-router-dom`)
 - Redux Toolkit + React Redux (состояние UI и формы)
+- i18next + react-i18next (локализация RU/EN)
 - Fetch API
 
 ### Скрипты
