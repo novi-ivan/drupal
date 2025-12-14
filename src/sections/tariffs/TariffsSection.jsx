@@ -2,6 +2,15 @@ import React from 'react'
 import { tariffs } from '../../data/tariffs'
 
 export function TariffsSection() {
+    const goToContacts = () => {
+        const el = document.getElementById('contacts')
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            return
+        }
+        window.location.hash = 'contacts'
+    }
+
     return (
         <section id="tariffs" className="section tariffs">
             <div className="container">
@@ -42,7 +51,7 @@ export function TariffsSection() {
                                     'btn tariff-card__btn' +
                                     (tariff.type === 'primary' ? ' tariff-card__btn--filled' : ' btn--outline')
                                 }
-                                onClick={() => { window.location.href = '/#contacts' }}
+                                onClick={goToContacts}
                             >
                                 {tariff.buttonText}
                             </button>
@@ -62,7 +71,7 @@ export function TariffsSection() {
                             предложим вам индивидуальные условия!
                         </span>
                     </p>
-                    <button className="tariffs__footer-link" onClick={() => { window.location.href = '/#contacts' }}>
+                    <button className="tariffs__footer-link" onClick={goToContacts}>
                         получить индивидуальный тариф
                     </button>
                 </div>
