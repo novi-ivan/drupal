@@ -15,6 +15,11 @@ React + Vite проект для учебного задания: адаптив
   - блокировка кнопки во время отправки + обработка ошибки
   - сохранение введённых значений в `LocalStorage`
   - корректная работа кнопки «Назад» (History API через React Router)
+- Веб-сервис задания 8 без серверных фреймворков:
+  - `POST /api/submissions` создаёт заявку и возвращает логин, пароль, ссылку на профиль
+  - `PUT /api/submissions/:login` обновляет данные по Basic Auth
+  - `GET /api/submissions/:login` отдаёт профиль по Basic Auth
+  - поддерживаются JSON, XML и обычная HTML-форма для fallback без JavaScript
 
 ### Технологии
 
@@ -23,19 +28,32 @@ React + Vite проект для учебного задания: адаптив
 - Redux Toolkit + React Redux (состояние UI и формы)
 - i18next + react-i18next (локализация RU/EN)
 - Fetch API
+- Node.js `node:http` для backend API
 
 ### Скрипты
 
 - `npm run dev` — запуск в режиме разработки
+- `npm run dev:api` — запуск backend API на `http://localhost:4173`
 - `npm run build` — сборка в `build/`
+- `npm run serve` — запуск backend API и раздача сборки из `build/`
+- `npm run test:server` — проверки backend API
 - `npm run preview` — предпросмотр сборки
 - `npm run lint` — ESLint
 
 ### Быстрый старт
 
 1. `npm i`
-2. `npm run dev`
-3. Открыть `http://localhost:5173`
+2. В одном терминале `npm run dev:api`
+3. Во втором терминале `npm run dev`
+4. Открыть `http://localhost:5173`
+
+Для проверки production-сценария:
+
+1. `npm run build`
+2. `npm run serve`
+3. Открыть `http://localhost:4173`
+
+Данные заявок сохраняются в `server/data/submissions.json`. Файл игнорируется Git.
 
 ### Структура `src/`
 
@@ -51,6 +69,8 @@ React + Vite проект для учебного задания: адаптив
 - `src/assets/` — шрифты/картинки/видео
 - `src/styles/` — глобальные стили и стили секций
 - `src/utils/` — мелкие утилиты
+- `server/` — backend API задания 8
+- `test/` — проверки backend API
 
 ### Где что искать
 
@@ -61,6 +81,9 @@ React + Vite проект для учебного задания: адаптив
 - Форма (общая для секции и попапа): `src/sections/contact/ContactForm.jsx`
 - Стили секции контактов: `src/styles/sections/contact.css`
 - Стили попапа: `src/styles/sections/contact-modal.css`
+- Backend entrypoint: `server/index.js`
+- Backend app/router: `server/app.js`
+- Backend validation: `server/validation.js`
 
 ### Деплой на GitHub Pages
 
