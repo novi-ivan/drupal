@@ -5,9 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:api": "node server/index.js",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "serve": "node server/index.js",
+    "test:server": "node test/submissions-api.test.js"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.11.1",
