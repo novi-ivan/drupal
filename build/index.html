@@ -5,8 +5,8 @@
     <link rel="icon" type="image/svg+xml" href="/drupal/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Drupal Coder</title>
-    <script type="module" crossorigin src="/drupal/assets/index-CEepHVxp.js"></script>
-    <link rel="stylesheet" crossorigin href="/drupal/assets/index-CdFUemvX.css">
+    <script type="module" crossorigin src="/drupal/assets/index-Cq-TAYJS.js"></script>
+    <link rel="stylesheet" crossorigin href="/drupal/assets/index-Rfrrwxhj.css">
   </head>
   <body>
     <script>
@@ -23,6 +23,22 @@
         window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash)
       })(window.location)
     </script>
-    <div id="root"></div>
+    <div id="root"></div>
+    <noscript>
+      <main style="max-width:720px;margin:0 auto;padding:32px 20px;font-family:Arial,sans-serif">
+        <h1>Оставить заявку на поддержку сайта</h1>
+        <form action="/api/submissions" method="post" style="display:grid;gap:12px">
+          <input name="name" placeholder="Ваше имя" style="padding:12px" />
+          <input name="phone" placeholder="Телефон" style="padding:12px" />
+          <input name="email" placeholder="E-mail" style="padding:12px" />
+          <textarea name="comment" placeholder="Ваш комментарий" rows="5" style="padding:12px"></textarea>
+          <label>
+            <input type="checkbox" name="consent" value="true" checked />
+            Согласие на обработку персональных данных
+          </label>
+          <button type="submit" style="padding:12px">Оставить заявку!</button>
+        </form>
+      </main>
+    </noscript>
   </body>
 </html>
