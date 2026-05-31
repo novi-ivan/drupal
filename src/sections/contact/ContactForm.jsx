@@ -18,8 +18,14 @@ export function ContactForm({ submitLabelKey = 'contact.form.submit' }) {
     const errors = useSelector((s) => s.contactForm.errors)
     const status = useSelector((s) => s.contactForm.status)
     const submitErrorMessageKey = useSelector((s) => s.contactForm.submitErrorMessageKey)
+    const credentials = useSelector((s) => s.contactForm.credentials)
+    const profileUrl = useSelector((s) => s.contactForm.profileUrl)
+    const profilePath = useSelector((s) => s.contactForm.profilePath)
+    const lastAction = useSelector((s) => s.contactForm.lastAction)
 
     const isLoading = status === 'loading'
+    const isUpdate = Boolean(credentials?.login && credentials?.password && profilePath)
+    const formAction = isUpdate ? profilePath : '/api/submissions'
 
     const onChangeField = useCallback(
         (field) => (e) => {
@@ -46,7 +52,9 @@ export function ContactForm({ submitLabelKey = 'contact.form.submit' }) {
     )
 
     return (
-        <form className="contact__form" onSubmit={handleSubmit} noValidate>
+        <form className="contact__form" action={formAction} method="post" onSubmit={handleSubmit} noValidate>
+            {isUpdate && <input type="hidden" name="_method" value="put" />}
+
             <label className={`contact__field ${errors.name ? 'contact__field--error' : ''}`}>
                 <input
                     type="text"
@@ -105,10 +113,44 @@ export function ContactForm({ submitLabelKey = 'contact.form.submit' }) {
             {errors.consent && <p className="contact__error">{t(errors.consent)}</p>}
 
             <button type="submit" className="contact__submit" disabled={isLoading}>
-                {isLoading ? t('contact.form.sending') : t(submitLabelKey)}
+                {isLoading
+                    ? t('contact.form.sending')
+                    : isUpdate
+                        ? t('contact.form.update')
+                        : t(submitLabelKey)}
             </button>
 
-            {status === 'success' && <p className="contact__success">{t('contact.form.success')}</p>}
+            {status === 'success' && (
+                <div className="contact__success">
+                    <p>
+                        {lastAction === 'update'
+                            ? t('contact.form.updated')
+                            : t('contact.form.created')}
+                    </p>
+                    {credentials && (
+                        <dl className="contact__credentials">
+                            <div>
+                                <dt>{t('contact.form.credentials.login')}</dt>
+                                <dd>{credentials.login}</dd>
+                            </div>
+                            <div>
+                                <dt>{t('contact.form.credentials.password')}</dt>
+                                <dd>{credentials.password}</dd>
+                            </div>
+                            {(profileUrl || profilePath) && (
+                                <div>
+                                    <dt>{t('contact.form.credentials.profile')}</dt>
+                                    <dd>
+                                        <a href={profileUrl || profilePath}>
+                                            {profileUrl || profilePath}
+                                        </a>
+                                    </dd>
+                                </div>
+                            )}
+                        </dl>
+                    )}
+                </div>
+            )}
             {status === 'error' && (
                 <p className="contact__error">{t(submitErrorMessageKey || 'contact.form.errors.submitFailed')}</p>
             )}

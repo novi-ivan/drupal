@@ -439,6 +439,37 @@
     color: rgba(255, 255, 255, 0.9);
 }
 
+.contact__success p {
+    margin: 0 0 10px;
+}
+
+.contact__credentials {
+    display: grid;
+    gap: 8px;
+    margin: 0;
+}
+
+.contact__credentials div {
+    display: grid;
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 10px;
+}
+
+.contact__credentials dt {
+    color: rgba(255, 255, 255, 0.58);
+}
+
+.contact__credentials dd {
+    margin: 0;
+    min-width: 0;
+    word-break: break-word;
+}
+
+.contact__credentials a {
+    color: #fff;
+    text-decoration: underline;
+}
+
 .contact__submit:disabled {
     opacity: 0.65;
     cursor: not-allowed;

@@ -218,8 +218,15 @@
         "comment": "Your comment"
       },
       "submit": "Leave a request!",
+      "update": "Save request",
       "sending": "Sending…",
-      "success": "Request sent",
+      "created": "Request created. Save these details for editing.",
+      "updated": "Request updated",
+      "credentials": {
+        "login": "Login",
+        "password": "Password",
+        "profile": "Profile"
+      },
       "consent": "By sending a request, I consent to the processing of my personal data",
       "errors": {
         "nameRequired": "Please enter your name",

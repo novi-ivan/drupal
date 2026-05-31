@@ -13,23 +13,41 @@ function loadContactFormValues() {
         if (!raw) return null
         const parsed = JSON.parse(raw)
         if (!parsed || typeof parsed !== 'object') return null
-        return parsed
+        if (parsed.values) return parsed
+        return { values: parsed }
     } catch {
         return null
     }
 }
 
-function saveContactFormValues(values) {
+function saveContactFormState(contactForm) {
     try {
-        localStorage.setItem(CONTACT_FORM_STORAGE_KEY, JSON.stringify(values))
+        localStorage.setItem(
+            CONTACT_FORM_STORAGE_KEY,
+            JSON.stringify({
+                values: contactForm.values,
+                credentials: contactForm.credentials,
+                profileUrl: contactForm.profileUrl,
+                profilePath: contactForm.profilePath,
+                submission: contactForm.submission,
+                lastAction: contactForm.lastAction,
+            }),
+        )
     } catch {
         // ignore storage errors
     }
 }
 
-const preloadedContactValues = loadContactFormValues()
-const preloadedContactFormState = preloadedContactValues
-    ? { ...contactFormInitialState, values: { ...contactFormInitialState.values, ...preloadedContactValues } }
+const preloadedContactData = loadContactFormValues()
+const preloadedContactFormState = preloadedContactData
+    ? {
+        ...contactFormInitialState,
+        ...preloadedContactData,
+        values: { ...contactFormInitialState.values, ...preloadedContactData.values },
+        errors: contactFormInitialState.errors,
+        status: 'idle',
+        submitErrorMessageKey: '',
+    }
     : undefined
 
 export const store = configureStore({
@@ -45,8 +63,7 @@ export const store = configureStore({
             const result = next(action)
 
             if (action.type.startsWith('contactForm/')) {
-                const { values } = storeApi.getState().contactForm
-                saveContactFormValues(values)
+                saveContactFormState(storeApi.getState().contactForm)
             }
 
             return result
