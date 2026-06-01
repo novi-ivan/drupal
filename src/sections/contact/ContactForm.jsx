@@ -10,6 +10,9 @@ import {
 } from './contactFormSlice'
 import { useTranslation } from 'react-i18next'
 
+const appBasePath = import.meta.env.BASE_URL.replace(/\/$/, '')
+const SUBMISSIONS_FORM_ACTION = `${appBasePath}/api/submissions`
+
 export function ContactForm({ submitLabelKey = 'contact.form.submit' }) {
     const dispatch = useDispatch()
     const { t } = useTranslation()
@@ -25,7 +28,7 @@ export function ContactForm({ submitLabelKey = 'contact.form.submit' }) {
 
     const isLoading = status === 'loading'
     const isUpdate = Boolean(credentials?.login && credentials?.password && profilePath)
-    const formAction = isUpdate ? profilePath : '/api/submissions'
+    const formAction = isUpdate ? profilePath : SUBMISSIONS_FORM_ACTION
 
     const onChangeField = useCallback(
         (field) => (e) => {

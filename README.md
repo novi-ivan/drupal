@@ -50,10 +50,11 @@ React + Vite проект для учебного задания: адаптив
 Для проверки production-сценария:
 
 1. `npm run build`
-2. `npm run serve`
-3. Открыть `http://localhost:4173`
+2. `BASE_PATH=/drupal npm run serve`
+3. Открыть `http://localhost:4173/drupal`
 
 Данные заявок сохраняются в `server/data/submissions.json`. Файл игнорируется Git.
+Для сервера можно задать постоянный путь: `SUBMISSIONS_DB=/var/www/drupal/submissions.json`.
 
 ### Структура `src/`
 

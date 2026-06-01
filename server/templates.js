@@ -102,11 +102,11 @@ export function renderSubmissionForm({
     )
 }
 
-export function renderProfilePage(profile) {
+export function renderProfilePage(profile, basePath = '') {
     const login = profile.login
     return renderSubmissionForm({
         title: `Профиль ${login}`,
-        action: `/api/submissions/${encodeURIComponent(login)}`,
+        action: `${basePath}/api/submissions/${encodeURIComponent(login)}`,
         methodOverride: 'put',
         values: profile.data,
         submitLabel: 'Сохранить',

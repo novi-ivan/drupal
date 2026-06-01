@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
-const SUBMISSIONS_URL = '/api/submissions'
+const appBasePath = import.meta.env.BASE_URL.replace(/\/$/, '')
+const SUBMISSIONS_URL = `${appBasePath}/api/submissions`
 
 const isValidPhone = (value) => /^\+?[0-9\s\-()]{7,}$/.test(value)
 const isValidEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value)

@@ -44,8 +44,27 @@ function getBaseUrl(req) {
     return `${proto}://${req.headers.host || 'localhost'}`
 }
 
-function submissionPayload(req, result) {
-    const profilePath = `/api/submissions/${encodeURIComponent(result.submission.login)}`
+function normalizeBasePath(basePath = '') {
+    const clean = String(basePath).trim().replace(/^\/+|\/+$/g, '')
+    return clean ? `/${clean}` : ''
+}
+
+function withBasePath(basePath, path) {
+    return `${basePath}${path}`
+}
+
+function stripBasePath(pathname, basePath) {
+    if (!basePath) return pathname
+    if (pathname === basePath) return '/'
+    if (pathname.startsWith(`${basePath}/`)) return pathname.slice(basePath.length)
+    return null
+}
+
+function submissionPayload(req, result, basePath) {
+    const profilePath = withBasePath(
+        basePath,
+        `/api/submissions/${encodeURIComponent(result.submission.login)}`,
+    )
     return {
         credentials: result.credentials,
         profileUrl: `${getBaseUrl(req)}${profilePath}`,
@@ -137,15 +156,21 @@ function validationResponse(
     send(res, 422, { message: 'Validation failed', values, errors }, type)
 }
 
-async function handleCreateSubmission(req, res, store, type, values) {
+async function handleCreateSubmission(req, res, store, type, values, basePath) {
     const validation = validateSubmissionInput(values)
     if (hasValidationErrors(validation.errors)) {
-        validationResponse(res, type, validation.values, validation.errors)
+        validationResponse(
+            res,
+            type,
+            validation.values,
+            validation.errors,
+            withBasePath(basePath, '/api/submissions'),
+        )
         return
     }
 
     const result = await store.create(validation.values)
-    const payload = submissionPayload(req, result)
+    const payload = submissionPayload(req, result, basePath)
 
     if (type === 'html') {
         send(res, 201, renderCreateResult(payload), 'html')
@@ -155,7 +180,7 @@ async function handleCreateSubmission(req, res, store, type, values) {
     send(res, 201, payload, type)
 }
 
-async function handleUpdateSubmission(req, res, store, type, login, values) {
+async function handleUpdateSubmission(req, res, store, type, login, values, basePath) {
     const ok = await requireSubmissionAuth(req, res, store, login, type)
     if (!ok) return
 
@@ -166,7 +191,7 @@ async function handleUpdateSubmission(req, res, store, type, login, values) {
             type,
             validation.values,
             validation.errors,
-            `/api/submissions/${encodeURIComponent(login)}`,
+            withBasePath(basePath, `/api/submissions/${encodeURIComponent(login)}`),
             'put',
         )
         return
@@ -179,7 +204,7 @@ async function handleUpdateSubmission(req, res, store, type, login, values) {
     }
 
     const payload = {
-        profileUrl: `${getBaseUrl(req)}/api/submissions/${encodeURIComponent(login)}`,
+        profileUrl: `${getBaseUrl(req)}${withBasePath(basePath, `/api/submissions/${encodeURIComponent(login)}`)}`,
         submission,
     }
 
@@ -191,7 +216,7 @@ async function handleUpdateSubmission(req, res, store, type, login, values) {
     send(res, 200, payload, type)
 }
 
-async function handleGetSubmission(req, res, store, type, login) {
+async function handleGetSubmission(req, res, store, type, login, basePath) {
     const ok = await requireSubmissionAuth(req, res, store, login, type)
     if (!ok) return
 
@@ -202,17 +227,16 @@ async function handleGetSubmission(req, res, store, type, login) {
     }
 
     if (type === 'html') {
-        send(res, 200, renderProfilePage(submission), 'html')
+        send(res, 200, renderProfilePage(submission, basePath), 'html')
         return
     }
 
     send(res, 200, { submission }, type)
 }
 
-async function handleApi(req, res, store) {
-    const url = getRequestUrl(req)
+async function handleApi(req, res, store, basePath, appPath) {
     const type = preferredResponseType(req)
-    const match = url.pathname.match(/^\/api\/submissions(?:\/([^/]+))?$/)
+    const match = appPath.match(/^\/api\/submissions(?:\/([^/]+))?$/)
 
     if (!match) {
         send(res, 404, { message: 'Not found' }, type)
@@ -231,17 +255,17 @@ async function handleApi(req, res, store) {
     const method = methodWithOverride(req, values)
 
     if (!login && method === 'POST') {
-        await handleCreateSubmission(req, res, store, type, values)
+        await handleCreateSubmission(req, res, store, type, values, basePath)
         return true
     }
 
     if (login && method === 'GET') {
-        await handleGetSubmission(req, res, store, type, login)
+        await handleGetSubmission(req, res, store, type, login, basePath)
         return true
     }
 
     if (login && method === 'PUT') {
-        await handleUpdateSubmission(req, res, store, type, login, values)
+        await handleUpdateSubmission(req, res, store, type, login, values, basePath)
         return true
     }
 
@@ -259,11 +283,9 @@ async function serveFile(res, filePath) {
     return true
 }
 
-async function serveStatic(req, res, publicDir) {
-    const url = getRequestUrl(req)
+async function serveStatic(req, res, publicDir, appPath) {
     const root = resolve(publicDir)
-    const pathname = decodeURIComponent(url.pathname)
-    const requested = normalize(pathname).replace(/^(\.\.[/\\])+/, '')
+    const requested = normalize(decodeURIComponent(appPath)).replace(/^(\.\.[/\\])+/, '')
     const filePath = resolve(join(root, requested === '/' ? 'index.html' : requested))
 
     if (!filePath.startsWith(root)) {
@@ -290,17 +312,28 @@ async function serveStatic(req, res, publicDir) {
 export function createApp({
     dataFile,
     publicDir = join(process.cwd(), 'build'),
+    basePath = '',
     store = new SubmissionStore(dataFile),
 } = {}) {
+    const normalizedBasePath = normalizeBasePath(basePath)
+
     return createServer(async (req, res) => {
         try {
-            if (req.url.startsWith('/api/')) {
-                await handleApi(req, res, store)
+            const url = getRequestUrl(req)
+            const appPath = stripBasePath(url.pathname, normalizedBasePath)
+
+            if (appPath === null) {
+                send(res, 404, renderErrorPage(404, 'Страница не найдена.'), 'html')
+                return
+            }
+
+            if (appPath.startsWith('/api/')) {
+                await handleApi(req, res, store, normalizedBasePath, appPath)
                 return
             }
 
             if (req.method === 'GET' || req.method === 'HEAD') {
-                const served = await serveStatic(req, res, publicDir)
+                const served = await serveStatic(req, res, publicDir, appPath)
                 if (served) return
             }
 

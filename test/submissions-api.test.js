@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict'
-import { mkdtemp } from 'node:fs/promises'
+import { mkdir, mkdtemp, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { tmpdir } from 'node:os'
 import { Readable, Writable } from 'node:stream'
@@ -13,11 +13,16 @@ const VALID_SUBMISSION = {
     consent: true,
 }
 
-async function createTestApp() {
+async function createTestApp(options = {}) {
     const dir = await mkdtemp(join(tmpdir(), 'drupal-submissions-'))
+    const publicDir = join(dir, 'public')
+    await mkdir(publicDir, { recursive: true })
+    await writeFile(join(publicDir, 'index.html'), '<!doctype html><title>Test app</title>', 'utf8')
+
     return createApp({
         dataFile: join(dir, 'submissions.json'),
-        publicDir: join(dir, 'public'),
+        publicDir,
+        ...options,
     })
 }
 
@@ -245,12 +250,39 @@ async function updatesWithHtmlMethodOverride() {
     assert.match(response.body, /Заявка обновлена/)
 }
 
+async function supportsMountedBasePath() {
+    const app = await createTestApp({ basePath: '/drupal' })
+    const createResponse = await request(app, {
+        method: 'POST',
+        path: '/drupal/api/submissions',
+        headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+        },
+        body: JSON.stringify(VALID_SUBMISSION),
+    })
+
+    assert.equal(createResponse.status, 201)
+    const created = createResponse.json()
+    assert.match(created.profilePath, /^\/drupal\/api\/submissions\/user_[a-f0-9]{6}$/)
+    assert.equal(new URL(created.profileUrl).pathname, created.profilePath)
+
+    const staticResponse = await request(app, {
+        path: '/drupal/',
+        headers: { Accept: 'text/html' },
+    })
+
+    assert.equal(staticResponse.status, 200)
+    assert.match(staticResponse.body, /Test app/)
+}
+
 const tests = [
     ['POST /api/submissions validates JSON payloads', validatesJsonPayloads],
     ['POST creates credentials and PUT updates with Basic Auth', createsAndUpdatesWithBasicAuth],
     ['POST accepts XML and can answer XML', acceptsXmlPayloads],
     ['POST accepts regular HTML forms for no-JS fallback', acceptsHtmlForms],
     ['POST method override updates regular HTML forms', updatesWithHtmlMethodOverride],
+    ['mounted /drupal base path serves API and static assets', supportsMountedBasePath],
 ]
 
 async function main() {
